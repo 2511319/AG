@@ -514,9 +514,9 @@ export const SCREENS: ScreenMap = {
             "Здесь живут ваши герои. Откройте лист активного персонажа, перейдите в список героев или журнал, посмотрите отношения и фракции, создайте нового персонажа.",
         actions: [
             {
-                id: "open_stats",
-                label: "Характеристики",
-                target: "character_stats"
+                id: "open_sheet",
+                label: "Лист Героя",
+                target: "character_sheet"
             },
             {
                 id: "open_inventory",
@@ -542,6 +542,24 @@ export const SCREENS: ScreenMap = {
                 id: "create_character",
                 label: "Создать нового персонажа",
                 target: "solo_char"
+            }
+        ]
+    },
+    character_sheet: {
+        id: "character_sheet",
+        title: "Лист Героя",
+        kind: "game",
+        description: "Сводная информация о персонаже: здоровье, опыт, атрибуты и экипировка.",
+        actions: [
+            {
+                id: "open_stats",
+                label: "Подробные характеристики",
+                target: "character_stats"
+            },
+            {
+                id: "back_to_hub_from_sheet",
+                label: "Назад",
+                target: "character"
             }
         ]
     },

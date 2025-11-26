@@ -135,8 +135,11 @@ export function CharacterSheetScreen({ screen, onAction }: ScreenProps) {
                 </div>
 
                 <div className="flex-1 grid grid-cols-2 gap-2">
-                    <div className="rounded-md border border-slate-700 bg-slate-900/30 p-2 flex flex-col gap-1">
-                        <div className="text-[9px] uppercase tracking-wider opacity-50 mb-1">Атрибуты</div>
+                    <button onClick={() => onAction('character_stats')} className="rounded-md border border-slate-700 bg-slate-900/30 p-2 flex flex-col gap-1 hover:border-gold-dim transition-colors text-left">
+                        <div className="text-[9px] uppercase tracking-wider opacity-50 mb-1 flex justify-between items-center">
+                            <span>Атрибуты</span>
+                            <span className="text-[8px] text-gold-dim">Подробнее →</span>
+                        </div>
                         <div className="flex justify-between items-center p-1 rounded bg-slate-800/50">
                             <span>СИЛ</span>
                             <span className="font-mono text-amber-400">10 (+0)</span>
@@ -153,7 +156,7 @@ export function CharacterSheetScreen({ screen, onAction }: ScreenProps) {
                             <span>ИНТ</span>
                             <span className="font-mono text-amber-400">14 (+2)</span>
                         </div>
-                    </div>
+                    </button>
 
                     <div className="flex flex-col gap-2">
                         <div className="flex-1 rounded-md border border-slate-700 bg-slate-900/30 p-2">
