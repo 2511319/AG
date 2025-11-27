@@ -8,7 +8,7 @@ interface ScreenProps {
 
 export function PartyMenuScreen({ screen, onAction }: ScreenProps) {
     return (
-        <ScreenLayout title={screen.title} actions={screen.actions} onAction={onAction}>
+        <ScreenLayout title={screen.title} actions={screen.actions} onAction={onAction} backTarget={screen.backTarget}>
             <div className="flex flex-col h-full gap-2 text-[11px] text-slate-200">
                 <div className="flex-1 flex flex-col justify-center gap-4 px-4">
                     <button className="p-6 rounded-2xl border border-emerald-500/30 bg-emerald-900/20 hover:bg-emerald-900/30 transition-all group text-left" onClick={() => onAction("party_lobby_host")}>
@@ -36,7 +36,7 @@ export function PartyMenuScreen({ screen, onAction }: ScreenProps) {
 
 export function PartyCodeScreen({ screen, onAction }: ScreenProps) {
     return (
-        <ScreenLayout title={screen.title} actions={screen.actions} onAction={onAction}>
+        <ScreenLayout title={screen.title} actions={screen.actions} onAction={onAction} backTarget={screen.backTarget}>
             <div className="flex flex-col h-full gap-2 text-[11px] text-slate-200">
                 <div className="flex-1 flex flex-col justify-center items-center gap-4">
                     <div className="text-center">
@@ -65,7 +65,7 @@ export function PartyCodeScreen({ screen, onAction }: ScreenProps) {
 
 export function PartyLobbyHostScreen({ screen, onAction }: ScreenProps) {
     return (
-        <ScreenLayout title={screen.title} actions={screen.actions} onAction={onAction}>
+        <ScreenLayout title={screen.title} actions={screen.actions} onAction={onAction} backTarget={screen.backTarget}>
             <div className="flex flex-col h-full gap-2 text-[11px] text-slate-200">
                 <div className="p-3 rounded border border-slate-700 bg-slate-900/50 text-center">
                     <div className="text-[9px] uppercase opacity-50 mb-1">Код комнаты</div>
@@ -109,7 +109,7 @@ export function PartyLobbyHostScreen({ screen, onAction }: ScreenProps) {
 
 export function PartyLobbyGuestScreen({ screen, onAction }: ScreenProps) {
     return (
-        <ScreenLayout title={screen.title} actions={screen.actions} onAction={onAction}>
+        <ScreenLayout title={screen.title} actions={screen.actions} onAction={onAction} backTarget={screen.backTarget}>
             <div className="flex flex-col h-full gap-2 text-[11px] text-slate-200">
                 <div className="p-3 rounded border border-slate-700 bg-slate-900/50 text-center">
                     <div className="text-[9px] uppercase opacity-50 mb-1">Кампания</div>

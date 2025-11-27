@@ -10,6 +10,7 @@ export interface Screen {
     kind: 'service' | 'hub' | 'game' | 'gm' | 'editor' | 'info';
     description: string;
     actions?: Action[];
+    backTarget?: string;
 }
 
 export type ScreenMap = Record<string, Screen>;

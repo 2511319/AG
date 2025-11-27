@@ -1,5 +1,3 @@
-import React from 'react';
-
 interface BottomNavProps {
     currentId: string;
     onNavigate: (id: string) => void;

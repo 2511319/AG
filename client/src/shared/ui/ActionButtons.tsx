@@ -1,5 +1,5 @@
 import type { Action } from '../types';
-import { GoldButton } from './GoldButton';
+import { StylizedButton } from './StylizedButton';
 
 interface ActionButtonsProps {
     actions?: Action[];
@@ -15,14 +15,14 @@ export function ActionButtons({ actions, onAction }: ActionButtonsProps) {
                 const isPrimary = index === 0;
                 // We can use variants later if we want different styles for primary/secondary
                 return (
-                    <GoldButton
+                    <StylizedButton
                         key={action.id}
                         onClick={() => onAction(action.target)}
                         fullWidth
                         className={!isPrimary ? "opacity-90" : ""}
                     >
                         {action.label}
-                    </GoldButton>
+                    </StylizedButton>
                 );
             })}
         </div>
