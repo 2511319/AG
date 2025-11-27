@@ -68,7 +68,7 @@ export function PlayMenuScreen({ screen, onAction }: ScreenProps) {
 
 export function RunSceneScreen({ screen, onAction }: ScreenProps) {
     return (
-        <ScreenLayout title={screen.title} actions={screen.actions} onAction={onAction}>
+        <ScreenLayout title={screen.title} actions={screen.actions} onAction={onAction} backTarget={screen.backTarget}>
             <div className="flex flex-col h-full gap-2 text-[11px] text-slate-200">
                 <div className="h-8 rounded-md border border-amber-500/60 bg-amber-500/10 flex items-center justify-between px-2">
                     <span className="truncate">
@@ -133,7 +133,7 @@ export function RunSceneScreen({ screen, onAction }: ScreenProps) {
 
 export function RunScenePlanScreen({ screen, onAction }: ScreenProps) {
     return (
-        <ScreenLayout title={screen.title} actions={screen.actions} onAction={onAction}>
+        <ScreenLayout title={screen.title} actions={screen.actions} onAction={onAction} backTarget={screen.backTarget}>
             <div className="flex flex-col h-full gap-2 text-[11px] text-slate-200">
                 <div className="flex-1 rounded border border-slate-700 bg-slate-900/50 p-2 relative overflow-hidden">
                     <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-slate-700 via-slate-900 to-slate-950" />
@@ -166,7 +166,7 @@ export function RunScenePlanScreen({ screen, onAction }: ScreenProps) {
 
 export function RunCombatScreen({ screen, onAction }: ScreenProps) {
     return (
-        <ScreenLayout title={screen.title} actions={screen.actions} onAction={onAction}>
+        <ScreenLayout title={screen.title} actions={screen.actions} onAction={onAction} backTarget={screen.backTarget}>
             <div className="flex flex-col h-full gap-2 text-[11px] text-slate-200">
                 <div className="h-8 rounded-md border border-red-500/60 bg-red-500/10 flex items-center justify-between px-2">
                     <span className="truncate">

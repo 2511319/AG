@@ -59,7 +59,7 @@ export function JournalHubScreen({ screen, onAction }: ScreenProps) {
 
 export function JournalSessionsScreen({ screen, onAction }: ScreenProps) {
     return (
-        <ScreenLayout title={screen.title} actions={screen.actions} onAction={onAction}>
+        <ScreenLayout title={screen.title} actions={screen.actions} onAction={onAction} backTarget={screen.backTarget}>
             <div className="flex flex-col h-full gap-4">
                 <div className="flex-1 overflow-y-auto pr-1 space-y-4">
                     {[12, 11, 10].map((num, i) => (
@@ -93,7 +93,7 @@ export function JournalSessionsScreen({ screen, onAction }: ScreenProps) {
 
 export function JournalCampaignsScreen({ screen, onAction }: ScreenProps) {
     return (
-        <ScreenLayout title={screen.title} actions={screen.actions} onAction={onAction}>
+        <ScreenLayout title={screen.title} actions={screen.actions} onAction={onAction} backTarget={screen.backTarget}>
             <div className="flex flex-col h-full gap-4">
                 <div className="flex-1 overflow-y-auto pr-1 space-y-3">
                     <div className="p-3 rounded-lg border border-emerald-900/50 bg-gradient-to-br from-emerald-950 to-stone-900 shadow-lg relative overflow-hidden group cursor-pointer hover:border-emerald-500/50 transition-colors">
@@ -151,7 +151,7 @@ export function JournalCampaignsScreen({ screen, onAction }: ScreenProps) {
 
 export function JournalTimelineScreen({ screen, onAction }: ScreenProps) {
     return (
-        <ScreenLayout title={screen.title} actions={screen.actions} onAction={onAction}>
+        <ScreenLayout title={screen.title} actions={screen.actions} onAction={onAction} backTarget={screen.backTarget}>
             <div className="flex flex-col h-full gap-2 text-[11px] text-slate-200">
                 <div className="flex-1 relative pl-4 border-l border-slate-700 space-y-4 overflow-y-auto">
                     <div className="relative">
@@ -174,7 +174,7 @@ export function JournalTimelineScreen({ screen, onAction }: ScreenProps) {
 
 export function JournalGlossaryScreen({ screen, onAction }: ScreenProps) {
     return (
-        <ScreenLayout title={screen.title} actions={screen.actions} onAction={onAction}>
+        <ScreenLayout title={screen.title} actions={screen.actions} onAction={onAction} backTarget={screen.backTarget}>
             <div className="flex flex-col h-full gap-2 text-[11px] text-slate-200">
                 <div className="flex gap-1 mb-2 overflow-x-auto pb-1">
                     {['А', 'Б', 'В', 'Г', 'Д', 'Е'].map(l => (
@@ -198,7 +198,7 @@ export function JournalGlossaryScreen({ screen, onAction }: ScreenProps) {
 
 export function JournalWorldScreen({ screen, onAction }: ScreenProps) {
     return (
-        <ScreenLayout title={screen.title} actions={screen.actions} onAction={onAction}>
+        <ScreenLayout title={screen.title} actions={screen.actions} onAction={onAction} backTarget={screen.backTarget}>
             <div className="flex flex-col h-full gap-2 text-[11px] text-slate-200">
                 <div className="h-32 rounded border border-slate-700 bg-slate-900/50 relative overflow-hidden mb-2">
                     <div className="absolute inset-0 bg-[url('https://placehold.co/400x200/1e293b/475569?text=World+Map')] bg-cover bg-center opacity-50" />
@@ -222,7 +222,7 @@ export function JournalWorldScreen({ screen, onAction }: ScreenProps) {
 
 export function JournalRulesScreen({ screen, onAction }: ScreenProps) {
     return (
-        <ScreenLayout title={screen.title} actions={screen.actions} onAction={onAction}>
+        <ScreenLayout title={screen.title} actions={screen.actions} onAction={onAction} backTarget={screen.backTarget}>
             <div className="flex flex-col h-full gap-2 text-[11px] text-slate-200">
                 <div className="space-y-2 overflow-y-auto pr-1">
                     <div className="p-2 rounded border border-slate-700 bg-slate-900/30">
@@ -241,7 +241,7 @@ export function JournalRulesScreen({ screen, onAction }: ScreenProps) {
 
 export function JournalAchievementsScreen({ screen, onAction }: ScreenProps) {
     return (
-        <ScreenLayout title={screen.title} actions={screen.actions} onAction={onAction}>
+        <ScreenLayout title={screen.title} actions={screen.actions} onAction={onAction} backTarget={screen.backTarget}>
             <div className="flex flex-col h-full gap-2 text-[11px] text-slate-200">
                 <div className="space-y-2 overflow-y-auto pr-1">
                     <div className="flex gap-2 p-2 rounded border border-amber-500/30 bg-amber-900/10">
@@ -266,7 +266,7 @@ export function JournalAchievementsScreen({ screen, onAction }: ScreenProps) {
 
 export function JournalTrophiesScreen({ screen, onAction }: ScreenProps) {
     return (
-        <ScreenLayout title={screen.title} actions={screen.actions} onAction={onAction}>
+        <ScreenLayout title={screen.title} actions={screen.actions} onAction={onAction} backTarget={screen.backTarget}>
             <div className="flex flex-col h-full gap-2 text-[11px] text-slate-200">
                 <div className="grid grid-cols-3 gap-2">
                     <div className="aspect-square rounded border border-amber-500/50 bg-amber-900/20 flex flex-col items-center justify-center gap-1">

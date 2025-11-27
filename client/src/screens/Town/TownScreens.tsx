@@ -69,7 +69,7 @@ export function TownHubScreen({ screen, onAction }: ScreenProps) {
 
 export function TownTavernScreen({ screen, onAction }: ScreenProps) {
     return (
-        <ScreenLayout title={screen.title} actions={screen.actions} onAction={onAction}>
+        <ScreenLayout title={screen.title} actions={screen.actions} onAction={onAction} backTarget={screen.backTarget}>
             <div className="flex flex-col h-full gap-3">
                 {/* Header */}
                 <div className="p-3 rounded-lg border border-amber-700/50 bg-amber-900/20 flex items-center gap-3 relative overflow-hidden">
@@ -139,12 +139,7 @@ export function TownTavernScreen({ screen, onAction }: ScreenProps) {
                 </div>
 
                 {/* Footer Action */}
-                <button
-                    onClick={() => onAction('town_hub')}
-                    className="w-full py-3 rounded-lg border border-stone-700 bg-stone-800 hover:bg-stone-700 active:scale-95 transition-all text-stone-400 hover:text-stone-200 font-bold text-xs uppercase tracking-wider"
-                >
-                    Назад в город
-                </button>
+
             </div>
         </ScreenLayout>
     );
@@ -152,7 +147,7 @@ export function TownTavernScreen({ screen, onAction }: ScreenProps) {
 
 export function TownMarketScreen({ screen, onAction }: ScreenProps) {
     return (
-        <ScreenLayout title={screen.title} actions={screen.actions} onAction={onAction}>
+        <ScreenLayout title={screen.title} actions={screen.actions} onAction={onAction} backTarget={screen.backTarget}>
             <div className="flex flex-col h-full gap-3">
                 <div className="flex items-center justify-between p-3 rounded-lg border border-yellow-600/30 bg-yellow-900/10">
                     <div className="flex items-center gap-2">
@@ -199,12 +194,7 @@ export function TownMarketScreen({ screen, onAction }: ScreenProps) {
                     ))}
                 </div>
 
-                <button
-                    onClick={() => onAction('town_hub')}
-                    className="w-full py-3 rounded-lg border border-stone-700 bg-stone-800 hover:bg-stone-700 active:scale-95 transition-all text-stone-400 hover:text-stone-200 font-bold text-xs uppercase tracking-wider"
-                >
-                    Назад в город
-                </button>
+
             </div>
         </ScreenLayout>
     );
@@ -212,7 +202,7 @@ export function TownMarketScreen({ screen, onAction }: ScreenProps) {
 
 export function TownCraftScreen({ screen, onAction }: ScreenProps) {
     return (
-        <ScreenLayout title={screen.title} actions={screen.actions} onAction={onAction}>
+        <ScreenLayout title={screen.title} actions={screen.actions} onAction={onAction} backTarget={screen.backTarget}>
             <div className="flex flex-col h-full gap-3">
                 <div className="p-3 rounded-lg border border-stone-600 bg-stone-800/50 flex items-center gap-3">
                     <div className="w-10 h-10 rounded bg-stone-700 flex items-center justify-center text-xl border border-stone-500">🔨</div>
@@ -246,12 +236,7 @@ export function TownCraftScreen({ screen, onAction }: ScreenProps) {
                     </div>
                 </div>
 
-                <button
-                    onClick={() => onAction('town_hub')}
-                    className="w-full py-3 rounded-lg border border-stone-700 bg-stone-800 hover:bg-stone-700 active:scale-95 transition-all text-stone-400 hover:text-stone-200 font-bold text-xs uppercase tracking-wider"
-                >
-                    Назад в город
-                </button>
+
             </div>
         </ScreenLayout>
     );
@@ -259,7 +244,7 @@ export function TownCraftScreen({ screen, onAction }: ScreenProps) {
 
 export function TownGuildScreen({ screen, onAction }: ScreenProps) {
     return (
-        <ScreenLayout title={screen.title} actions={screen.actions} onAction={onAction}>
+        <ScreenLayout title={screen.title} actions={screen.actions} onAction={onAction} backTarget={screen.backTarget}>
             <div className="flex flex-col h-full gap-3">
                 <div className="p-3 rounded-lg border border-purple-500/30 bg-purple-900/10 flex items-center gap-3">
                     <div className="w-10 h-10 rounded-full border border-purple-400 bg-purple-900/50 flex items-center justify-center text-xl shadow-[0_0_10px_rgba(168,85,247,0.2)]">
@@ -288,12 +273,7 @@ export function TownGuildScreen({ screen, onAction }: ScreenProps) {
                     </div>
                 </div>
 
-                <button
-                    onClick={() => onAction('town_hub')}
-                    className="w-full py-3 rounded-lg border border-stone-700 bg-stone-800 hover:bg-stone-700 active:scale-95 transition-all text-stone-400 hover:text-stone-200 font-bold text-xs uppercase tracking-wider"
-                >
-                    Назад в город
-                </button>
+
             </div>
         </ScreenLayout>
     );
@@ -301,7 +281,7 @@ export function TownGuildScreen({ screen, onAction }: ScreenProps) {
 
 export function TownBoardScreen({ screen, onAction }: ScreenProps) {
     return (
-        <ScreenLayout title={screen.title} actions={screen.actions} onAction={onAction}>
+        <ScreenLayout title={screen.title} actions={screen.actions} onAction={onAction} backTarget={screen.backTarget}>
             <div className="flex flex-col h-full gap-3">
                 <div className="flex items-center justify-between px-2 py-1">
                     <span className="font-bold text-stone-400 text-xs uppercase tracking-wider">Доска объявлений</span>
@@ -326,12 +306,7 @@ export function TownBoardScreen({ screen, onAction }: ScreenProps) {
                     ))}
                 </div>
 
-                <button
-                    onClick={() => onAction('town_hub')}
-                    className="w-full py-3 rounded-lg border border-stone-700 bg-stone-800 hover:bg-stone-700 active:scale-95 transition-all text-stone-400 hover:text-stone-200 font-bold text-xs uppercase tracking-wider"
-                >
-                    Назад в город
-                </button>
+
             </div>
         </ScreenLayout>
     );
@@ -339,7 +314,7 @@ export function TownBoardScreen({ screen, onAction }: ScreenProps) {
 
 export function TownArenaScreen({ screen, onAction }: ScreenProps) {
     return (
-        <ScreenLayout title={screen.title} actions={screen.actions} onAction={onAction}>
+        <ScreenLayout title={screen.title} actions={screen.actions} onAction={onAction} backTarget={screen.backTarget}>
             <div className="flex flex-col h-full gap-3">
                 <div className="h-32 rounded-lg border border-red-900/50 bg-red-950/30 p-4 relative overflow-hidden flex flex-col justify-end group">
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-red-900/20 via-slate-950/60 to-slate-950" />
@@ -375,12 +350,7 @@ export function TownArenaScreen({ screen, onAction }: ScreenProps) {
 
                 <div className="flex-1" />
 
-                <button
-                    onClick={() => onAction('town_hub')}
-                    className="w-full py-3 rounded-lg border border-stone-700 bg-stone-800 hover:bg-stone-700 active:scale-95 transition-all text-stone-400 hover:text-stone-200 font-bold text-xs uppercase tracking-wider"
-                >
-                    Назад в город
-                </button>
+
             </div>
         </ScreenLayout>
     );
@@ -388,7 +358,7 @@ export function TownArenaScreen({ screen, onAction }: ScreenProps) {
 
 export function TownTrainingScreen({ screen, onAction }: ScreenProps) {
     return (
-        <ScreenLayout title={screen.title} actions={screen.actions} onAction={onAction}>
+        <ScreenLayout title={screen.title} actions={screen.actions} onAction={onAction} backTarget={screen.backTarget}>
             <div className="flex flex-col h-full gap-3">
                 <div className="p-3 rounded-lg border border-stone-600 bg-stone-800/50 flex items-center gap-3">
                     <div className="w-10 h-10 rounded bg-stone-700 flex items-center justify-center text-xl border border-stone-500">🎯</div>
@@ -416,12 +386,7 @@ export function TownTrainingScreen({ screen, onAction }: ScreenProps) {
 
                 <div className="flex-1" />
 
-                <button
-                    onClick={() => onAction('town_hub')}
-                    className="w-full py-3 rounded-lg border border-stone-700 bg-stone-800 hover:bg-stone-700 active:scale-95 transition-all text-stone-400 hover:text-stone-200 font-bold text-xs uppercase tracking-wider"
-                >
-                    Назад в город
-                </button>
+
             </div>
         </ScreenLayout>
     );
@@ -429,7 +394,7 @@ export function TownTrainingScreen({ screen, onAction }: ScreenProps) {
 
 export function TownTempleScreen({ screen, onAction }: ScreenProps) {
     return (
-        <ScreenLayout title={screen.title} actions={screen.actions} onAction={onAction}>
+        <ScreenLayout title={screen.title} actions={screen.actions} onAction={onAction} backTarget={screen.backTarget}>
             <div className="flex flex-col h-full gap-3">
                 <div className="p-4 rounded-lg border border-yellow-200/20 bg-yellow-50/5 flex flex-col items-center text-center relative overflow-hidden">
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-yellow-100/10 via-transparent to-transparent" />
@@ -459,12 +424,7 @@ export function TownTempleScreen({ screen, onAction }: ScreenProps) {
 
                 <div className="flex-1" />
 
-                <button
-                    onClick={() => onAction('town_hub')}
-                    className="w-full py-3 rounded-lg border border-stone-700 bg-stone-800 hover:bg-stone-700 active:scale-95 transition-all text-stone-400 hover:text-stone-200 font-bold text-xs uppercase tracking-wider"
-                >
-                    Назад в город
-                </button>
+
             </div>
         </ScreenLayout>
     );
@@ -472,7 +432,7 @@ export function TownTempleScreen({ screen, onAction }: ScreenProps) {
 
 export function TownHomeScreen({ screen, onAction }: ScreenProps) {
     return (
-        <ScreenLayout title={screen.title} actions={screen.actions} onAction={onAction}>
+        <ScreenLayout title={screen.title} actions={screen.actions} onAction={onAction} backTarget={screen.backTarget}>
             <div className="flex flex-col h-full gap-3">
                 <div className="p-3 rounded-lg border border-orange-900/40 bg-[#3c2f2f] flex items-center gap-3 relative overflow-hidden">
                     <div className="absolute inset-0 bg-[url('https://placehold.co/400x100/3c2f2f/5d4037?text=Home')] opacity-20 bg-cover bg-center" />
@@ -503,12 +463,7 @@ export function TownHomeScreen({ screen, onAction }: ScreenProps) {
                     </div>
                 </div>
 
-                <button
-                    onClick={() => onAction('town_hub')}
-                    className="w-full py-3 rounded-lg border border-stone-700 bg-stone-800 hover:bg-stone-700 active:scale-95 transition-all text-stone-400 hover:text-stone-200 font-bold text-xs uppercase tracking-wider"
-                >
-                    Назад в город
-                </button>
+
             </div>
         </ScreenLayout>
     );
@@ -516,7 +471,7 @@ export function TownHomeScreen({ screen, onAction }: ScreenProps) {
 
 export function TownQuestDetailsScreen({ screen, onAction }: ScreenProps) {
     return (
-        <ScreenLayout title={screen.title} actions={screen.actions} onAction={onAction}>
+        <ScreenLayout title={screen.title} actions={screen.actions} onAction={onAction} backTarget={screen.backTarget}>
             <div className="flex flex-col h-full gap-4">
                 <div className="p-4 rounded-lg border border-amber-700/50 bg-[#2a2420] relative overflow-hidden shadow-lg">
                     <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#d97706_1px,transparent_1px)] [background-size:16px_16px]" />
@@ -585,7 +540,7 @@ export function TownQuestDetailsScreen({ screen, onAction }: ScreenProps) {
 
 export function TownItemDetailsScreen({ screen, onAction }: ScreenProps) {
     return (
-        <ScreenLayout title={screen.title} actions={screen.actions} onAction={onAction}>
+        <ScreenLayout title={screen.title} actions={screen.actions} onAction={onAction} backTarget={screen.backTarget}>
             <div className="flex flex-col h-full gap-4">
                 <div className="flex gap-4 p-4 rounded-lg border border-stone-700 bg-stone-800/50 items-start">
                     <div className="w-20 h-20 rounded bg-stone-900 border border-stone-600 flex items-center justify-center text-4xl shadow-inner">
@@ -634,7 +589,7 @@ export function TownItemDetailsScreen({ screen, onAction }: ScreenProps) {
 
 export function TownNpcDialogScreen({ screen, onAction }: ScreenProps) {
     return (
-        <ScreenLayout title={screen.title} actions={screen.actions} onAction={onAction}>
+        <ScreenLayout title={screen.title} actions={screen.actions} onAction={onAction} backTarget={screen.backTarget}>
             <div className="flex flex-col h-full gap-3">
                 <div className="flex-1 rounded-lg border border-stone-700 bg-stone-900/50 p-4 overflow-y-auto flex flex-col gap-4">
                     <div className="flex gap-3">

@@ -195,13 +195,8 @@ export const SCREENS: ScreenMap = {
         kind: "game",
         description:
             "Макет таверны. В финальной версии здесь можно будет искать пати и кампании, брать побочные задания и общаться с ключевыми NPC.",
-        actions: [
-            {
-                id: "back_to_town_from_tavern",
-                label: "Назад в город",
-                target: "town_hub"
-            }
-        ]
+        backTarget: "town_hub",
+        actions: []
     },
     town_market: {
         id: "town_market",
@@ -209,13 +204,8 @@ export const SCREENS: ScreenMap = {
         kind: "game",
         description:
             "Макет рынка. В финальной версии здесь будет покупка и продажа предметов, расходников, косметики и, возможно, особых слотов кампаний.",
-        actions: [
-            {
-                id: "back_to_town_from_market",
-                label: "Назад в город",
-                target: "town_hub"
-            },
-        ]
+        backTarget: "town_hub",
+        actions: []
     },
     town_craft: {
         id: "town_craft",
@@ -223,13 +213,8 @@ export const SCREENS: ScreenMap = {
         kind: "game",
         description:
             "Макет крафта. В финальной версии здесь можно будет улучшать и создавать предметы, разбивать лут на ресурсы и экспериментировать с рецептами.",
-        actions: [
-            {
-                id: "back_to_town_from_craft",
-                label: "Назад в город",
-                target: "town_hub"
-            },
-        ]
+        backTarget: "town_hub",
+        actions: []
     },
     town_guild: {
         id: "town_guild",
@@ -237,13 +222,8 @@ export const SCREENS: ScreenMap = {
         kind: "game",
         description:
             "Макет гильдии. В финальной версии здесь будут кланы и сообщества, общие цели, рейтинги и, возможно, кооперативные кампании.",
-        actions: [
-            {
-                id: "back_to_town_from_guild",
-                label: "Назад в город",
-                target: "town_hub"
-            },
-        ]
+        backTarget: "town_hub",
+        actions: []
     },
     town_board: {
         id: "town_board",
@@ -251,13 +231,8 @@ export const SCREENS: ScreenMap = {
         kind: "game",
         description:
             "Макет доски объявлений. В финальной версии здесь будут побочные задания, контракты и события, которые можно взять между основными сессиями.",
-        actions: [
-            {
-                id: "back_to_town_from_board",
-                label: "Назад в город",
-                target: "town_hub"
-            },
-        ]
+        backTarget: "town_hub",
+        actions: []
     },
     town_arena: {
         id: "town_arena",
@@ -265,13 +240,8 @@ export const SCREENS: ScreenMap = {
         kind: "game",
         description:
             "Макет арены. В финальной версии здесь будут боевые испытания для проверки билдов, тренировочные бои и особые челленджи.",
-        actions: [
-            {
-                id: "back_to_town_from_arena",
-                label: "Назад в город",
-                target: "town_hub"
-            },
-        ]
+        backTarget: "town_hub",
+        actions: []
     },
     town_training: {
         id: "town_training",
@@ -279,13 +249,8 @@ export const SCREENS: ScreenMap = {
         kind: "game",
         description:
             "Макет тренировочной площадки. В финальной версии здесь будут обучающие сцены, учебные бои и подсказки по механикам.",
-        actions: [
-            {
-                id: "back_to_town_from_training",
-                label: "Назад в город",
-                target: "town_hub"
-            },
-        ]
+        backTarget: "town_hub",
+        actions: []
     },
     town_temple: {
         id: "town_temple",
@@ -293,13 +258,8 @@ export const SCREENS: ScreenMap = {
         kind: "game",
         description:
             "Макет храма. В финальной версии здесь можно будет снимать проклятия, получать благословения и взаимодействовать с мета‑ресурсами кампаний.",
-        actions: [
-            {
-                id: "back_to_town_from_temple",
-                label: "Назад в город",
-                target: "town_hub"
-            },
-        ]
+        backTarget: "town_hub",
+        actions: []
     },
     town_home: {
         id: "town_home",
@@ -307,22 +267,17 @@ export const SCREENS: ScreenMap = {
         kind: "game",
         description:
             "Макет личного дома/комнаты. В финальной версии здесь будет отображаться коллекция трофеев, украшения и персонализация игрока.",
-        actions: [
-            {
-                id: "back_to_town_from_home",
-                label: "Назад в город",
-                target: "town_hub"
-            },
-        ]
+        backTarget: "town_hub",
+        actions: []
     },
     town_quest_details: {
         id: "town_quest_details",
         title: "Детали задания",
         kind: "game",
         description: "Подробное описание задания, награды и условия.",
+        backTarget: "town_tavern",
         actions: [
-            { id: "accept_quest", label: "Принять", target: "town_tavern" }, // Mock: returns to tavern
-            { id: "back", label: "Назад", target: "town_tavern" }
+            { id: "accept_quest", label: "Принять", target: "town_tavern" } // Mock: returns to tavern
         ]
     },
     town_item_details: {
@@ -330,9 +285,9 @@ export const SCREENS: ScreenMap = {
         title: "Предмет",
         kind: "game",
         description: "Характеристики предмета и покупка.",
+        backTarget: "town_market",
         actions: [
-            { id: "buy_item", label: "Купить", target: "town_market" }, // Mock: returns to market
-            { id: "back", label: "Назад", target: "town_market" }
+            { id: "buy_item", label: "Купить", target: "town_market" } // Mock: returns to market
         ]
     },
     town_npc_dialog: {
@@ -400,13 +355,8 @@ export const SCREENS: ScreenMap = {
         kind: "service",
         description:
             "Макет архива сессий. В финальной версии здесь будут краткие отчёты по сыгранным сессиям, ключевые решения и ссылки на эпилоги.",
-        actions: [
-            {
-                id: "back_to_journal_from_sessions",
-                label: "Назад в журнал",
-                target: "journal_hub"
-            }
-        ]
+        backTarget: "journal_hub",
+        actions: []
     },
     journal_campaigns: {
         id: "journal_campaigns",
@@ -414,13 +364,8 @@ export const SCREENS: ScreenMap = {
         kind: "service",
         description:
             "Макет списка кампаний игрока. В финальной версии здесь будут статусы кампаний (активна, завершена), краткие описания и переходы к продолжению или эпилогу.",
-        actions: [
-            {
-                id: "back_to_journal_from_campaigns",
-                label: "Назад в журнал",
-                target: "journal_hub"
-            }
-        ]
+        backTarget: "journal_hub",
+        actions: []
     },
     journal_timeline: {
         id: "journal_timeline",
@@ -428,13 +373,8 @@ export const SCREENS: ScreenMap = {
         kind: "service",
         description:
             "Макет хронологии мира и кампаний. В финальной версии здесь будет лента ключевых событий, привязанных к сессиям и важным решениям.",
-        actions: [
-            {
-                id: "back_to_journal_from_timeline",
-                label: "Назад в журнал",
-                target: "journal_hub"
-            }
-        ]
+        backTarget: "journal_hub",
+        actions: []
     },
     journal_glossary: {
         id: "journal_glossary",
@@ -442,13 +382,8 @@ export const SCREENS: ScreenMap = {
         kind: "service",
         description:
             "Справочник терминов и ключевых понятий мира. В финальной версии здесь будут краткие определения, ссылки на сцены и важных NPC.",
-        actions: [
-            {
-                id: "back_to_journal_from_glossary",
-                label: "Назад в журнал",
-                target: "journal_hub"
-            }
-        ]
+        backTarget: "journal_hub",
+        actions: []
     },
     journal_world: {
         id: "journal_world",
@@ -456,13 +391,8 @@ export const SCREENS: ScreenMap = {
         kind: "service",
         description:
             "Обзор лора: фракции, регионы, хронология и ключевые события. В финальной версии здесь будут разбивки по темам и связки с кампаниями.",
-        actions: [
-            {
-                id: "back_to_journal_from_world",
-                label: "Назад в журнал",
-                target: "journal_hub"
-            }
-        ]
+        backTarget: "journal_hub",
+        actions: []
     },
     journal_rules: {
         id: "journal_rules",
@@ -470,13 +400,8 @@ export const SCREENS: ScreenMap = {
         kind: "service",
         description:
             "Облегчённая версия правил: как работают проверки, бой, магия и особые механики этого сеттинга.",
-        actions: [
-            {
-                id: "back_to_journal_from_rules",
-                label: "Назад в журнал",
-                target: "journal_hub"
-            }
-        ]
+        backTarget: "journal_hub",
+        actions: []
     },
     journal_achievements: {
         id: "journal_achievements",
@@ -484,13 +409,8 @@ export const SCREENS: ScreenMap = {
         kind: "service",
         description:
             "Список открытых достижений: сюжетные вехи, скрытые находки, испытания. В финальной версии здесь будет прогресс по каждому достижению.",
-        actions: [
-            {
-                id: "back_to_journal_from_achievements",
-                label: "Назад в журнал",
-                target: "journal_hub"
-            }
-        ]
+        backTarget: "journal_hub",
+        actions: []
     },
     journal_trophies: {
         id: "journal_trophies",
@@ -498,50 +418,27 @@ export const SCREENS: ScreenMap = {
         kind: "service",
         description:
             "Коллекция особых трофеев: уникальные предметы, памятные находки и мета‑награды за кампании.",
-        actions: [
-            {
-                id: "back_to_journal_from_trophies",
-                label: "Назад в журнал",
-                target: "journal_hub"
-            }
-        ]
+        backTarget: "journal_hub",
+        actions: []
     },
     character: {
         id: "character",
         title: "Персонаж",
+        kind: "hub",
+        description: "Хаб персонажа.",
+        actions: []
+    },
+    character_sheet: {
+        id: "character_sheet",
+        title: "Лист Героя",
         kind: "game",
-        description:
-            "Здесь живут ваши герои. Откройте лист активного персонажа, перейдите в список героев или журнал, посмотрите отношения и фракции, создайте нового персонажа.",
+        description: "Сводная информация о персонаже: здоровье, опыт, атрибуты и экипировка.",
+        backTarget: "character",
         actions: [
             {
                 id: "open_stats",
-                label: "Характеристики",
+                label: "Подробные характеристики",
                 target: "character_stats"
-            },
-            {
-                id: "open_inventory",
-                label: "Инвентарь",
-                target: "character_inventory"
-            },
-            {
-                id: "open_story",
-                label: "История",
-                target: "character_story"
-            },
-            {
-                id: "manage_characters",
-                label: "Список персонажей",
-                target: "character_list"
-            },
-            {
-                id: "relations",
-                label: "Отношения и фракции",
-                target: "character_relations"
-            },
-            {
-                id: "create_character",
-                label: "Создать нового персонажа",
-                target: "solo_char"
             }
         ]
     },
@@ -551,6 +448,7 @@ export const SCREENS: ScreenMap = {
         kind: "game",
         description:
             "Макет списка всех персонажей: активных и архивных. В финальной версии здесь можно будет выбирать активного героя и перемещать персонажей между активом и архивом.",
+        backTarget: "character",
         actions: [
             {
                 id: "mark_active",
@@ -561,11 +459,6 @@ export const SCREENS: ScreenMap = {
                 id: "toggle_archive",
                 label: "Переместить героя в архив / вернуть",
                 target: "character_list"
-            },
-            {
-                id: "back_to_character_from_list",
-                label: "Назад в раздел “Персонаж”",
-                target: "character"
             }
         ]
     },
@@ -575,13 +468,8 @@ export const SCREENS: ScreenMap = {
         kind: "game",
         description:
             "Здесь будут основные характеристики (Сила, Ловкость и т.п.), модификаторы, навыки, спасброски и другие числовые параметры персонажа.",
-        actions: [
-            {
-                id: "back_to_hub_from_stats",
-                label: "Назад",
-                target: "character"
-            }
-        ]
+        backTarget: "character",
+        actions: []
     },
     character_inventory: {
         id: "character_inventory",
@@ -589,13 +477,8 @@ export const SCREENS: ScreenMap = {
         kind: "game",
         description:
             "Здесь будут слоты экипировки, содержимое рюкзака, валюты и особые предметы персонажа.",
-        actions: [
-            {
-                id: "back_to_hub_from_inventory",
-                label: "Назад",
-                target: "character"
-            }
-        ]
+        backTarget: "character",
+        actions: []
     },
     character_story: {
         id: "character_story",
@@ -603,13 +486,8 @@ export const SCREENS: ScreenMap = {
         kind: "game",
         description:
             "Здесь будут краткая биография героя, важные события кампаний, заметки мастера и личные пометки игрока.",
-        actions: [
-            {
-                id: "back_to_hub_from_story",
-                label: "Назад",
-                target: "character"
-            }
-        ]
+        backTarget: "character",
+        actions: []
     },
     character_relations: {
         id: "character_relations",
@@ -617,13 +495,8 @@ export const SCREENS: ScreenMap = {
         kind: "game",
         description:
             "Макет экрана отношений персонажа. В финальной версии здесь будет репутация с фракциями, отношения с ключевыми NPC и влияние решений кампаний.",
-        actions: [
-            {
-                id: "back_to_character_from_relations",
-                label: "Назад в раздел “Персонаж”",
-                target: "character"
-            }
-        ]
+        backTarget: "character",
+        actions: []
     },
     solo_char: {
         id: "solo_char",
@@ -631,16 +504,12 @@ export const SCREENS: ScreenMap = {
         kind: "game",
         description:
             "Перед тем как отправиться в приключение, создайте героя. В финальной версии тут будут детали внешности, класса и предыстории.",
+        backTarget: "play_menu",
         actions: [
             {
                 id: "start_run",
                 label: "Начать приключение",
                 target: "run_scene"
-            },
-            {
-                id: "back",
-                label: "Назад",
-                target: "play_menu"
             }
         ]
     },
@@ -650,6 +519,7 @@ export const SCREENS: ScreenMap = {
         kind: "hub",
         description:
             "Соберите друзей в одну кампанию: создайте комнату или присоединитесь по коду.",
+        backTarget: "play_menu",
         actions: [
             {
                 id: "create",
@@ -660,11 +530,6 @@ export const SCREENS: ScreenMap = {
                 id: "join",
                 label: "Войти по коду",
                 target: "party_code"
-            },
-            {
-                id: "back",
-                label: "Назад",
-                target: "play_menu"
             }
         ]
     },
@@ -674,16 +539,12 @@ export const SCREENS: ScreenMap = {
         kind: "service",
         description:
             "Введите код кампании, который прислал вам мастер или друг, чтобы присоединиться к пати.",
+        backTarget: "party_menu",
         actions: [
             {
                 id: "submit",
                 label: "Подтвердить код",
                 target: "party_lobby_guest"
-            },
-            {
-                id: "back",
-                label: "Назад",
-                target: "party_menu"
             }
         ]
     },
@@ -693,6 +554,7 @@ export const SCREENS: ScreenMap = {
         kind: "game",
         description:
             "Вы создали кампанию. Ждите игроков, собирайте пати и когда все готовы — начинайте приключение.",
+        backTarget: "party_menu",
         actions: [
             {
                 id: "add_character",
@@ -703,11 +565,6 @@ export const SCREENS: ScreenMap = {
                 id: "start_party_run",
                 label: "Начать игру",
                 target: "run_scene"
-            },
-            {
-                id: "back",
-                label: "Назад",
-                target: "party_menu"
             }
         ]
     },
