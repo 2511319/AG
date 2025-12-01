@@ -140,7 +140,7 @@ export const SCREENS: ScreenMap = {
         title: "Город",
         kind: "game",
         description:
-            "Городской хаб между приключениями. Здесь вы можете зайти в таверну, на рынок, заняться крафтом, делами гильдии, взять квесты, испытать героя на арене или отдохнуть дома.",
+            "Городской хаб между приключениями. Здесь вы можете зайти в таверну, на рынок, заняться крафтом, делами гильдии, посетить аукцион или испытать удачу.",
         actions: [
             {
                 id: "tavern",
@@ -153,6 +153,11 @@ export const SCREENS: ScreenMap = {
                 target: "town_market"
             },
             {
+                id: "auction",
+                label: "Аукцион",
+                target: "town_auction"
+            },
+            {
                 id: "craft",
                 label: "Крафт",
                 target: "town_craft"
@@ -163,9 +168,24 @@ export const SCREENS: ScreenMap = {
                 target: "town_guild"
             },
             {
-                id: "board",
-                label: "Доска объявлений",
-                target: "town_board"
+                id: "mage_tower",
+                label: "Башня Магов",
+                target: "town_mage_tower"
+            },
+            {
+                id: "gambling",
+                label: "Игорный Дом",
+                target: "town_gambling"
+            },
+            {
+                id: "port",
+                label: "Порт",
+                target: "town_port"
+            },
+            {
+                id: "temple",
+                label: "Храм",
+                target: "town_temple"
             },
             {
                 id: "arena",
@@ -173,14 +193,14 @@ export const SCREENS: ScreenMap = {
                 target: "town_arena"
             },
             {
-                id: "training",
-                label: "Тренировка",
-                target: "town_training"
+                id: "workshop",
+                label: "Мастерская",
+                target: "town_workshop"
             },
             {
-                id: "temple",
-                label: "Храм",
-                target: "town_temple"
+                id: "graveyard",
+                label: "Кладбище",
+                target: "town_graveyard"
             },
             {
                 id: "home",
@@ -196,7 +216,13 @@ export const SCREENS: ScreenMap = {
         description:
             "Макет таверны. В финальной версии здесь можно будет искать пати и кампании, брать побочные задания и общаться с ключевыми NPC.",
         backTarget: "town_hub",
-        actions: []
+        actions: [
+            {
+                id: "board",
+                label: "Доска объявлений",
+                target: "town_board"
+            }
+        ]
     },
     town_market: {
         id: "town_market",
@@ -204,6 +230,15 @@ export const SCREENS: ScreenMap = {
         kind: "game",
         description:
             "Макет рынка. В финальной версии здесь будет покупка и продажа предметов, расходников, косметики и, возможно, особых слотов кампаний.",
+        backTarget: "town_hub",
+        actions: []
+    },
+    town_auction: {
+        id: "town_auction",
+        title: "Аукцион",
+        kind: "game",
+        description:
+            "Торговая площадка для обмена редкими трофеями и экипировкой между игроками.",
         backTarget: "town_hub",
         actions: []
     },
@@ -225,13 +260,58 @@ export const SCREENS: ScreenMap = {
         backTarget: "town_hub",
         actions: []
     },
+    town_mage_tower: {
+        id: "town_mage_tower",
+        title: "Башня Магов",
+        kind: "game",
+        description:
+            "Центр магических услуг: телепортация в открытые локации, создание рун и зачарование.",
+        backTarget: "town_hub",
+        actions: []
+    },
+    town_gambling: {
+        id: "town_gambling",
+        title: "Игорный Дом",
+        kind: "game",
+        description:
+            "Место для азартных игр и ставок. Испытайте удачу в кости или карты.",
+        backTarget: "town_hub",
+        actions: []
+    },
+    town_port: {
+        id: "town_port",
+        title: "Порт",
+        kind: "game",
+        description:
+            "Морские ворота города. Отправка экспедиций, торговые контракты и черный рынок.",
+        backTarget: "town_hub",
+        actions: []
+    },
+    town_workshop: {
+        id: "town_workshop",
+        title: "Мастерская",
+        kind: "game",
+        description:
+            "Инженерный цех для улучшения городских строений и создания осадных орудий.",
+        backTarget: "town_hub",
+        actions: []
+    },
+    town_graveyard: {
+        id: "town_graveyard",
+        title: "Кладбище",
+        kind: "game",
+        description:
+            "Место упокоения и памяти. Воскрешение героев и общение с духами.",
+        backTarget: "town_hub",
+        actions: []
+    },
     town_board: {
         id: "town_board",
         title: "Доска объявлений",
         kind: "game",
         description:
             "Макет доски объявлений. В финальной версии здесь будут побочные задания, контракты и события, которые можно взять между основными сессиями.",
-        backTarget: "town_hub",
+        backTarget: "town_tavern",
         actions: []
     },
     town_arena: {
@@ -240,15 +320,6 @@ export const SCREENS: ScreenMap = {
         kind: "game",
         description:
             "Макет арены. В финальной версии здесь будут боевые испытания для проверки билдов, тренировочные бои и особые челленджи.",
-        backTarget: "town_hub",
-        actions: []
-    },
-    town_training: {
-        id: "town_training",
-        title: "Тренировка",
-        kind: "game",
-        description:
-            "Макет тренировочной площадки. В финальной версии здесь будут обучающие сцены, учебные бои и подсказки по механикам.",
         backTarget: "town_hub",
         actions: []
     },
@@ -277,7 +348,17 @@ export const SCREENS: ScreenMap = {
         description: "Подробное описание задания, награды и условия.",
         backTarget: "town_tavern",
         actions: [
-            { id: "accept_quest", label: "Принять", target: "town_tavern" } // Mock: returns to tavern
+            { id: "accept_quest", label: "Принять", target: "town_tavern" }
+        ]
+    },
+    town_quest_details_goat: {
+        id: "town_quest_details_goat",
+        title: "Детали задания",
+        kind: "game",
+        description: "Подробное описание задания, награды и условия.",
+        backTarget: "town_tavern",
+        actions: [
+            { id: "accept_quest", label: "Принять", target: "town_tavern" }
         ]
     },
     town_item_details: {
@@ -287,7 +368,7 @@ export const SCREENS: ScreenMap = {
         description: "Характеристики предмета и покупка.",
         backTarget: "town_market",
         actions: [
-            { id: "buy_item", label: "Купить", target: "town_market" } // Mock: returns to market
+            { id: "buy_item", label: "Купить", target: "town_market" }
         ]
     },
     town_npc_dialog: {
