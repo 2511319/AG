@@ -13,8 +13,9 @@ import {
 import {
     TownHubScreen, TownTavernScreen, TownMarketScreen, TownCraftScreen,
     TownGuildScreen, TownBoardScreen, TownArenaScreen, TownTrainingScreen,
-    TownTempleScreen, TownHomeScreen,
-    TownQuestDetailsScreen, TownItemDetailsScreen, TownNpcDialogScreen
+    TownTempleScreen, TownHomeScreen, TownAuctionScreen, TownMageTowerScreen,
+    TownGamblingScreen, TownPortScreen, TownWorkshopScreen, TownGraveyardScreen,
+    TownQuestDetailsScreen, TownQuestDetailsGoatScreen, TownItemDetailsScreen, TownNpcDialogScreen
 } from '../../screens/Town/TownScreens';
 import {
     CharacterScreen, CharacterListScreen, CharacterSheetScreen,
@@ -60,7 +61,14 @@ const SCREEN_COMPONENTS: Record<string, React.ComponentType<{ screen: Screen; on
     town_training: TownTrainingScreen,
     town_temple: TownTempleScreen,
     town_home: TownHomeScreen,
+    town_auction: TownAuctionScreen,
+    town_mage_tower: TownMageTowerScreen,
+    town_gambling: TownGamblingScreen,
+    town_port: TownPortScreen,
+    town_workshop: TownWorkshopScreen,
+    town_graveyard: TownGraveyardScreen,
     town_quest_details: TownQuestDetailsScreen,
+    town_quest_details_goat: TownQuestDetailsGoatScreen,
     town_item_details: TownItemDetailsScreen,
     town_npc_dialog: TownNpcDialogScreen,
 

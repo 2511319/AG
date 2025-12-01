@@ -10,12 +10,16 @@ export function TownHubScreen({ screen, onAction }: ScreenProps) {
     const buildings = [
         { id: 'town_tavern', icon: '🍺', label: 'Таверна', desc: 'Слухи и отдых' },
         { id: 'town_market', icon: '💰', label: 'Рынок', desc: 'Торговля' },
+        { id: 'town_auction', icon: '⚖️', label: 'Аукцион', desc: 'Торговля P2P' },
         { id: 'town_craft', icon: '🔨', label: 'Кузница', desc: 'Крафт и ремонт' },
         { id: 'town_guild', icon: '⚜️', label: 'Гильдия', desc: 'Задания' },
-        { id: 'town_board', icon: '📜', label: 'Доска', desc: 'Объявления' },
-        { id: 'town_arena', icon: '⚔️', label: 'Арена', desc: 'Бои и ставки' },
-        { id: 'town_training', icon: '🎯', label: 'Плац', desc: 'Тренировка' },
+        { id: 'town_mage_tower', icon: '🔮', label: 'Башня', desc: 'Порталы' },
+        { id: 'town_gambling', icon: '🎲', label: 'Игорный Дом', desc: 'Игры и удача' },
+        { id: 'town_port', icon: '⚓', label: 'Порт', desc: 'Экспедиции' },
         { id: 'town_temple', icon: '✨', label: 'Храм', desc: 'Благословения' },
+        { id: 'town_arena', icon: '⚔️', label: 'Арена', desc: 'Бои и ставки' },
+        { id: 'town_workshop', icon: '⚙️', label: 'Цех', desc: 'Улучшения' },
+        { id: 'town_graveyard', icon: '⚰️', label: 'Кладбище', desc: 'Покой' },
         { id: 'town_home', icon: '🏠', label: 'Дом', desc: 'Личный уголок' },
     ];
 
@@ -112,7 +116,15 @@ export function TownTavernScreen({ screen, onAction }: ScreenProps) {
                     </div>
 
                     <div className="col-span-2 p-2 rounded-lg border border-stone-700 bg-stone-800/50">
-                        <div className="text-[10px] font-bold text-stone-500 uppercase tracking-wider mb-2">Доска заказов</div>
+                        <div className="flex items-center justify-between mb-2">
+                            <div className="text-[10px] font-bold text-stone-500 uppercase tracking-wider">Доска заказов</div>
+                            <button
+                                onClick={() => onAction('town_board')}
+                                className="text-[9px] text-amber-500 hover:text-amber-300 underline"
+                            >
+                                Показать все
+                            </button>
+                        </div>
                         <div className="grid grid-cols-2 gap-2">
                             <button
                                 onClick={() => onAction('town_quest_details')}
@@ -125,7 +137,7 @@ export function TownTavernScreen({ screen, onAction }: ScreenProps) {
                                 </div>
                             </button>
                             <button
-                                onClick={() => onAction('town_quest_details')}
+                                onClick={() => onAction('town_quest_details_goat')}
                                 className="p-2 rounded bg-stone-900/50 border border-stone-700 hover:border-amber-500/50 text-left transition-all group"
                             >
                                 <div className="font-bold text-stone-300 text-[10px] group-hover:text-amber-100">Пропавшая коза</div>
@@ -139,6 +151,15 @@ export function TownTavernScreen({ screen, onAction }: ScreenProps) {
                 </div>
 
                 {/* Footer Action */}
+                <div className="grid grid-cols-1">
+                    <button
+                        onClick={() => onAction('town_board')}
+                        className="py-3 rounded-lg border border-amber-700/30 bg-amber-900/20 hover:bg-amber-900/30 hover:border-amber-600 transition-all text-amber-100 font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2"
+                    >
+                        <span>📜</span>
+                        <span>Открыть доску объявлений</span>
+                    </button>
+                </div>
 
             </div>
         </ScreenLayout>
@@ -538,6 +559,75 @@ export function TownQuestDetailsScreen({ screen, onAction }: ScreenProps) {
     );
 }
 
+export function TownQuestDetailsGoatScreen({ screen, onAction }: ScreenProps) {
+    return (
+        <ScreenLayout title={screen.title} actions={screen.actions} onAction={onAction} backTarget={screen.backTarget}>
+            <div className="flex flex-col h-full gap-4">
+                <div className="p-4 rounded-lg border border-amber-700/50 bg-[#2a2420] relative overflow-hidden shadow-lg">
+                    <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#d97706_1px,transparent_1px)] [background-size:16px_16px]" />
+                    <div className="relative z-10 flex flex-col gap-2">
+                        <div className="flex justify-between items-start">
+                            <div className="font-serif text-xl text-amber-100 font-bold">Пропавшая коза</div>
+                            <div className="px-2 py-1 rounded bg-red-900/50 border border-red-700/50 text-red-200 text-[10px] uppercase tracking-wider">Сложность: 1</div>
+                        </div>
+                        <div className="h-px bg-amber-800/50 w-full my-1" />
+                        <p className="text-sm text-amber-100/80 font-serif leading-relaxed italic">
+                            "Моя любимая коза Манька убежала в лес! Она такая белая, пушистая... и глупая. Найди её, пока её не съели волки!"
+                        </p>
+                        <div className="flex justify-end mt-2">
+                            <span className="text-xs text-amber-500 font-bold">— Бабка Агафья</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="grid grid-cols-2 gap-3">
+                    <div className="p-3 rounded-lg border border-stone-700 bg-stone-800/50">
+                        <div className="text-[10px] font-bold text-stone-500 uppercase tracking-wider mb-2">Цели</div>
+                        <ul className="space-y-1 text-xs text-stone-300">
+                            <li className="flex items-center gap-2">
+                                <span className="w-1.5 h-1.5 rounded-full bg-stone-500" />
+                                Найти Маньку в лесу
+                            </li>
+                            <li className="flex items-center gap-2">
+                                <span className="w-1.5 h-1.5 rounded-full bg-stone-500" />
+                                Привести её домой
+                            </li>
+                        </ul>
+                    </div>
+                    <div className="p-3 rounded-lg border border-stone-700 bg-stone-800/50">
+                        <div className="text-[10px] font-bold text-stone-500 uppercase tracking-wider mb-2">Награда</div>
+                        <div className="flex flex-col gap-1">
+                            <div className="flex items-center gap-2 text-xs text-gold-dim font-bold">
+                                <span>💰</span> 30 золотых
+                            </div>
+                            <div className="flex items-center gap-2 text-xs text-purple-400">
+                                <span>✨</span> 5 опыта
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="flex-1" />
+
+                <div className="grid grid-cols-2 gap-3">
+                    <button
+                        onClick={() => onAction('town_tavern')}
+                        className="py-3 rounded-lg border border-stone-700 bg-stone-800 hover:bg-stone-700 active:scale-95 transition-all text-stone-400 hover:text-stone-200 font-bold text-xs uppercase tracking-wider"
+                    >
+                        Отказаться
+                    </button>
+                    <button
+                        onClick={() => onAction('town_tavern')}
+                        className="py-3 rounded-lg border border-gold-dim/50 bg-gold-dim/10 hover:bg-gold-dim/20 hover:border-gold-bright active:scale-95 transition-all text-gold-bright font-bold text-xs uppercase tracking-wider shadow-[0_0_10px_rgba(250,204,21,0.1)]"
+                    >
+                        Принять
+                    </button>
+                </div>
+            </div>
+        </ScreenLayout>
+    );
+}
+
 export function TownItemDetailsScreen({ screen, onAction }: ScreenProps) {
     return (
         <ScreenLayout title={screen.title} actions={screen.actions} onAction={onAction} backTarget={screen.backTarget}>
@@ -646,4 +736,157 @@ export function TownNpcDialogScreen({ screen, onAction }: ScreenProps) {
             </div>
         </ScreenLayout>
     );
+}
+
+export function TownAuctionScreen({ screen, onAction }: ScreenProps) {
+    return (
+        <ScreenLayout title={screen.title} actions={screen.actions} onAction={onAction} backTarget={screen.backTarget}>
+            <div className="flex flex-col h-full gap-3">
+                <div className="p-3 rounded-lg border border-amber-700/50 bg-[#2a2420] flex items-center gap-3 relative overflow-hidden">
+                    <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#d97706_1px,transparent_1px)] [background-size:16px_16px]" />
+                    <div className="w-10 h-10 rounded bg-amber-900/50 flex items-center justify-center text-xl border border-amber-600 relative z-10">⚖️</div>
+                    <div className="relative z-10">
+                        <div className="font-bold text-amber-100 text-sm">Аукционный Дом</div>
+                        <div className="text-[10px] text-amber-500/80">Торговля редкими артефактами</div>
+                    </div>
+                </div>
+
+                <div className="flex gap-2 overflow-x-auto pb-1">
+                    {['Все', 'Оружие', 'Броня', 'Артефакты'].map((tab, i) => (
+                        <button key={tab} className={`px-3 py-1.5 rounded text-[10px] font-bold uppercase tracking-wider transition-colors ${i === 0 ? 'bg-amber-700 text-amber-100' : 'bg-stone-800 text-stone-400 hover:bg-stone-700'}`}>
+                            {tab}
+                        </button>
+                    ))}
+                </div>
+
+                <div className="grid grid-cols-2 gap-2 overflow-y-auto flex-1 content-start">
+                    {[
+                        { name: "Меч Тысячи Истин", price: "5000", seller: "Nagibator2000", icon: "⚔️", time: "2ч" },
+                        { name: "Шлем Ужаса", price: "1200", seller: "Arthas", icon: "🪖", time: "5м" },
+                        { name: "Кольцо Всевластия", price: "9999", seller: "Sauron", icon: "💍", time: "1д" },
+                        { name: "Зелье Бессмертия", price: "500", seller: "Healer", icon: "🧪", time: "30м" },
+                    ].map((item, i) => (
+                        <div key={i} className="p-2 rounded-lg border border-stone-700 bg-stone-800/40 hover:bg-stone-800 transition-all flex flex-col gap-1 group">
+                            <div className="flex justify-between items-start">
+                                <span className="text-xl group-hover:scale-110 transition-transform">{item.icon}</span>
+                                <span className="text-[10px] font-mono text-amber-500">{item.price} зм</span>
+                            </div>
+                            <div className="font-bold text-stone-300 text-[11px] group-hover:text-amber-100 leading-tight">{item.name}</div>
+                            <div className="flex justify-between items-end mt-1">
+                                <div className="text-[9px] text-stone-600">@{item.seller}</div>
+                                <div className="text-[9px] text-stone-500">{item.time}</div>
+                            </div>
+                            <button className="mt-1 w-full py-1 rounded bg-amber-900/20 border border-amber-700/30 text-[9px] text-amber-500 hover:bg-amber-900/40 hover:text-amber-200 transition-colors uppercase tracking-wider">
+                                Ставка
+                            </button>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </ScreenLayout>
+    );
+}
+
+export function TownMageTowerScreen({ screen, onAction }: ScreenProps) {
+    return (
+        <ScreenLayout title={screen.title} actions={screen.actions} onAction={onAction} backTarget={screen.backTarget}>
+            <div className="flex flex-col h-full gap-3">
+                <div className="p-4 rounded-lg border border-purple-500/30 bg-purple-950/20 flex flex-col items-center text-center relative overflow-hidden">
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-purple-900/20 via-transparent to-transparent" />
+                    <div className="text-3xl mb-1 drop-shadow-[0_0_10px_rgba(168,85,247,0.5)]">🔮</div>
+                    <div className="font-serif text-purple-100 text-lg font-bold">Башня Магов</div>
+                    <div className="text-[10px] text-purple-300/60 italic">"Пространство — лишь иллюзия."</div>
+                </div>
+
+                <div className="flex-1 space-y-2 overflow-y-auto">
+                    <div className="text-[10px] font-bold text-stone-500 uppercase tracking-wider px-1">Телепортация</div>
+                    {[
+                        { name: "Столица", cost: "100", level: "1" },
+                        { name: "Древние Руины", cost: "250", level: "5" },
+                        { name: "Ледяной Пик", cost: "500", level: "10" },
+                        { name: "Вулканическое Плато", cost: "1000", level: "15" },
+                    ].map((loc, i) => (
+                        <button key={i} className="w-full p-3 rounded-lg border border-stone-700 bg-stone-800/50 hover:border-purple-500/50 hover:bg-stone-800 transition-all flex items-center justify-between group">
+                            <div className="flex items-center gap-3">
+                                <div className="w-8 h-8 rounded-full bg-stone-900 flex items-center justify-center text-purple-500 group-hover:text-purple-300 transition-colors">🌀</div>
+                                <div className="text-left">
+                                    <div className="font-bold text-stone-300 text-xs group-hover:text-purple-100">{loc.name}</div>
+                                    <div className="text-[9px] text-stone-600">Ур. {loc.level}+</div>
+                                </div>
+                            </div>
+                            <div className="text-[10px] font-mono text-purple-400 group-hover:text-purple-300">{loc.cost} маны</div>
+                        </button>
+                    ))}
+                </div>
+            </div>
+        </ScreenLayout>
+    );
+}
+
+export function TownGamblingScreen({ screen, onAction }: ScreenProps) {
+    return (
+        <ScreenLayout title={screen.title} actions={screen.actions} onAction={onAction} backTarget={screen.backTarget}>
+            <div className="flex flex-col h-full gap-3">
+                <div className="p-3 rounded-lg border border-red-900/40 bg-[#2a1a1a] flex items-center gap-3 relative overflow-hidden">
+                    <div className="absolute inset-0 bg-[url('https://placehold.co/400x100/2a1a1a/450a0a?text=Casino')] opacity-20 bg-cover bg-center" />
+                    <div className="w-12 h-12 rounded-full bg-red-950 border border-red-800 flex items-center justify-center text-2xl relative z-10 shadow-lg">🎲</div>
+                    <div className="relative z-10">
+                        <div className="font-bold text-red-100">Игорный Дом</div>
+                        <div className="text-[10px] text-red-400/80">Риск — дело благородное</div>
+                    </div>
+                </div>
+
+                <div className="grid grid-cols-2 gap-3 flex-1 content-center">
+                    <button className="aspect-square rounded-lg border border-stone-700 bg-stone-800/50 hover:bg-stone-800 hover:border-red-500 transition-all flex flex-col items-center justify-center gap-2 group">
+                        <span className="text-4xl group-hover:scale-110 transition-transform">🎲</span>
+                        <span className="font-bold text-stone-300 text-xs group-hover:text-red-200">Кости</span>
+                        <span className="text-[9px] text-stone-500">x2 ставка</span>
+                    </button>
+                    <button className="aspect-square rounded-lg border border-stone-700 bg-stone-800/50 hover:bg-stone-800 hover:border-red-500 transition-all flex flex-col items-center justify-center gap-2 group">
+                        <span className="text-4xl group-hover:scale-110 transition-transform">🃏</span>
+                        <span className="font-bold text-stone-300 text-xs group-hover:text-red-200">Карты</span>
+                        <span className="text-[9px] text-stone-500">Блэкджек</span>
+                    </button>
+                </div>
+
+                <div className="p-3 rounded-lg border border-stone-700 bg-stone-900/50 text-center">
+                    <div className="text-[10px] text-stone-500 uppercase tracking-wider mb-1">Ваш баланс</div>
+                    <div className="font-mono text-gold-bright font-bold text-lg">1,250 зм</div>
+                </div>
+            </div>
+        </ScreenLayout>
+    );
+}
+
+function WIPScreen({ title, icon, desc, backTarget, onAction }: { title: string, icon: string, desc: string, backTarget?: string, onAction: (t: string) => void }) {
+    return (
+        <ScreenLayout title={title} actions={[]} onAction={onAction} backTarget={backTarget}>
+            <div className="flex flex-col h-full items-center justify-center text-center gap-4 p-6">
+                <div className="w-20 h-20 rounded-full bg-stone-900 border-2 border-dashed border-stone-700 flex items-center justify-center text-4xl opacity-50">
+                    {icon}
+                </div>
+                <div>
+                    <div className="text-xl font-bold text-stone-300 mb-2">{title}</div>
+                    <p className="text-xs text-stone-500 max-w-[200px] mx-auto leading-relaxed">
+                        {desc}
+                    </p>
+                </div>
+                <div className="px-3 py-1 rounded bg-stone-800 text-[10px] text-stone-400 font-mono border border-stone-700">
+                    В РАЗРАБОТКЕ
+                </div>
+            </div>
+        </ScreenLayout>
+    );
+}
+
+export function TownPortScreen({ screen, onAction }: ScreenProps) {
+    return <WIPScreen title={screen.title} icon="⚓" desc="Корабли готовятся к отплытию. Скоро здесь можно будет отправлять экспедиции." backTarget={screen.backTarget} onAction={onAction} />;
+}
+
+export function TownWorkshopScreen({ screen, onAction }: ScreenProps) {
+    return <WIPScreen title={screen.title} icon="⚙️" desc="Механизмы еще не смазаны. Инженеры разрабатывают чертежи осадных орудий." backTarget={screen.backTarget} onAction={onAction} />;
+}
+
+export function TownGraveyardScreen({ screen, onAction }: ScreenProps) {
+    return <WIPScreen title={screen.title} icon="⚰️" desc="Здесь слишком тихо... Мертвые пока не готовы говорить с вами." backTarget={screen.backTarget} onAction={onAction} />;
 }
