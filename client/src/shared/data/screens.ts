@@ -53,6 +53,149 @@ export const SCREENS: ScreenMap = {
             }
         ]
     },
+    town_hub: {
+        id: "town_hub",
+        title: "Оплот Надежды",
+        kind: "hub",
+        description: "Мирный город, где герои могут отдохнуть и подготовиться к приключениям.",
+        actions: [
+            { id: "back_to_profile", label: "Меню", target: "profile" }
+        ]
+    },
+    town_tavern: {
+        id: "town_tavern",
+        title: "Таверна «Пьяный Гоблин»",
+        kind: "hub",
+        description: "Место для отдыха, слухов и найма спутников.",
+        actions: [{ id: "back", label: "В город", target: "town_hub" }]
+    },
+    town_market: {
+        id: "town_market",
+        title: "Рынок",
+        kind: "hub",
+        description: "Торговая площадь. Здесь можно купить снаряжение и припасы.",
+        actions: [{ id: "back", label: "В город", target: "town_hub" }]
+    },
+    town_auction: {
+        id: "town_auction",
+        title: "Аукцион",
+        kind: "service",
+        description: "Торговля редкими предметами между героями.",
+        actions: [{ id: "back", label: "В город", target: "town_hub" }]
+    },
+    town_craft: {
+        id: "town_craft",
+        title: "Кузница",
+        kind: "service",
+        description: "Создание и улучшение предметов, перековка снаряжения.",
+        actions: [{ id: "back", label: "В город", target: "town_hub" }]
+    },
+    town_guild: {
+        id: "town_guild",
+        title: "Гильдия Искателей",
+        kind: "hub",
+        description: "Доска контрактов и управление репутацией.",
+        actions: [{ id: "back", label: "В город", target: "town_hub" }]
+    },
+    town_mage_tower: {
+        id: "town_mage_tower",
+        title: "Башня Магов",
+        kind: "service",
+        description: "Изучение заклинаний, телепортация и магические услуги.",
+        actions: [{ id: "back", label: "В город", target: "town_hub" }]
+    },
+    town_gambling: {
+        id: "town_gambling",
+        title: "Игорный Дом",
+        kind: "game",
+        description: "Испытайте удачу в кости или карты.",
+        actions: [{ id: "back", label: "В город", target: "town_hub" }]
+    },
+    town_port: {
+        id: "town_port",
+        title: "Порт",
+        kind: "hub",
+        description: "Отправка в дальние экспедиции и морская торговля.",
+        actions: [{ id: "back", label: "В город", target: "town_hub" }]
+    },
+    town_temple: {
+        id: "town_temple",
+        title: "Храм",
+        kind: "service",
+        description: "Исцеление ран, снятие проклятий и благословения.",
+        actions: [{ id: "back", label: "В город", target: "town_hub" }]
+    },
+    town_arena: {
+        id: "town_arena",
+        title: "Арена",
+        kind: "game",
+        description: "Сражения за славу и золото.",
+        actions: [{ id: "back", label: "В город", target: "town_hub" }]
+    },
+    town_training: {
+        id: "town_training",
+        title: "Тренировочный лагерь",
+        kind: "game",
+        description: "Отработка навыков и проверка урона.",
+        actions: [{ id: "back", label: "В город", target: "town_hub" }]
+    },
+    town_workshop: {
+        id: "town_workshop",
+        title: "Мастерская",
+        kind: "service",
+        description: "Инженерные изыскания и создание механизмов.",
+        actions: [{ id: "back", label: "В город", target: "town_hub" }]
+    },
+    town_graveyard: {
+        id: "town_graveyard",
+        title: "Кладбище",
+        kind: "hub",
+        description: "Почтить память павших героев.",
+        actions: [{ id: "back", label: "В город", target: "town_hub" }]
+    },
+    town_home: {
+        id: "town_home",
+        title: "Личный Дом",
+        kind: "hub",
+        description: "Ваше личное жилище. Хранилище и отдых.",
+        actions: [{ id: "back", label: "В город", target: "town_hub" }]
+    },
+    town_quest_details: {
+        id: "town_quest_details",
+        title: "Детали задания",
+        kind: "service",
+        description: "Подробная информация о контракте.",
+        actions: [{ id: "back", label: "Назад", target: "town_board" }]
+    },
+    town_quest_details_goat: {
+        id: "town_quest_details_goat",
+        title: "Детали задания",
+        kind: "service",
+        description: "Подробная информация о контракте.",
+        actions: [{ id: "back", label: "Назад", target: "town_board" }]
+    },
+    town_item_details: {
+        id: "town_item_details",
+        title: "Предмет",
+        kind: "service",
+        description: "Информация о предмете.",
+        actions: [{ id: "back", label: "Назад", target: "town_market" }]
+    },
+    town_npc_dialog: {
+        id: "town_npc_dialog",
+        title: "Диалог",
+        kind: "game",
+        description: "Разговор с персонажем.",
+        actions: [{ id: "back", label: "Завершить", target: "town_hub" }]
+    },
+    town_board: {
+        id: "town_board",
+        title: "Доска объявлений",
+        kind: "service",
+        description: "Список доступных заданий в городе.",
+        actions: [{ id: "back", label: "В город", target: "town_hub" }]
+    },
+
     profile: {
         id: "profile",
         title: "Аккаунт",
