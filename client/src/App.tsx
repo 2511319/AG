@@ -2,7 +2,9 @@ import { PrototypeContainer } from './features/prototype/PrototypeContainer';
 
 function App() {
   return (
-    <PrototypeContainer />
+    <div className="h-screen w-screen bg-black text-white overflow-hidden">
+      <PrototypeContainer />
+    </div>
   );
 }
 

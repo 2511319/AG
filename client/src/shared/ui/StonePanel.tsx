@@ -7,7 +7,7 @@ interface StonePanelProps {
     fullHeight?: boolean;
 }
 
-export function StonePanel({ children, className = '', title, fullHeight = false }: StonePanelProps) {
+export function StonePanel({ children, className = '', title, fullHeight = false, padding = true }: StonePanelProps & { padding?: boolean }) {
     return (
         <div className={`panel-stone flex flex-col ${fullHeight ? 'h-full' : ''} ${className}`}>
             {title && (
@@ -15,7 +15,7 @@ export function StonePanel({ children, className = '', title, fullHeight = false
                     <h2 className="text-gold-gradient text-lg tracking-widest uppercase">{title}</h2>
                 </div>
             )}
-            <div className={`p-4 ${fullHeight ? 'flex-1 overflow-y-auto' : ''}`}>
+            <div className={`${padding ? 'p-4' : ''} ${fullHeight ? 'flex-1 overflow-y-auto' : ''}`}>
                 {children}
             </div>
         </div>

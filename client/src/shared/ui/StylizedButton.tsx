@@ -1,8 +1,9 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 interface StylizedButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     children: React.ReactNode;
-    variant?: 'primary' | 'secondary' | 'danger' | 'small';
+    variant?: 'primary' | 'secondary' | 'danger' | 'small' | 'ghost';
     fullWidth?: boolean;
 }
 
@@ -14,14 +15,18 @@ export function StylizedButton({
     ...props
 }: StylizedButtonProps) {
 
-    const baseClass = variant === 'small' ? 'btn-stylized-small' : 'btn-stylized';
+    const baseClass = variant === 'small' ? 'btn-stylized-small' : 
+                      variant === 'ghost' ? 'btn-stylized-ghost' : 'btn-stylized';
 
     return (
-        <button
+        <motion.button
+            whileHover={{ scale: 1.02, filter: "brightness(1.1)" }}
+            whileTap={{ scale: 0.98 }}
             className={`${baseClass} ${fullWidth ? 'w-full' : ''} ${className}`}
-            {...props}
+            {...props as any}
         >
             {children}
-        </button>
+        </motion.button>
     );
 }
+

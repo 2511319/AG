@@ -7,7 +7,7 @@ export function BottomNav({ currentId, onNavigate }: BottomNavProps) {
     const tabs = [
         { id: 'character', label: 'Герой', icon: '👤', match: ['character', 'character_sheet', 'character_inventory', 'character_stats', 'character_story', 'character_relations', 'character_list'] },
         { id: 'town_hub', label: 'Город', icon: '🏰', match: ['town_hub', 'town_tavern', 'town_market', 'town_craft', 'town_guild', 'town_board', 'town_arena', 'town_training', 'town_temple', 'town_home'] },
-        { id: 'play_menu', label: 'Игра', icon: '⚔️', match: ['play_menu', 'run_scene', 'solo_char', 'party_menu', 'run_combat', 'run_epilogue'] },
+        { id: 'play_menu', label: 'Игра', icon: '⚔️', match: ['play_menu', 'game_prep', 'run_scene', 'solo_char', 'party_menu', 'run_combat', 'run_epilogue'] },
         { id: 'master_hub', label: 'Мастер', icon: '📜', match: ['master_hub', 'gm_lobby', 'editor_library', 'editor_campaign', 'editor_templates', 'editor_quick_session'] },
         { id: 'profile', label: 'Аккаунт', icon: '⚙️', match: ['profile', 'settings', 'help', 'journal_hub', 'journal_sessions', 'journal_campaigns', 'journal_timeline', 'journal_glossary', 'journal_world', 'journal_rules', 'journal_achievements', 'journal_trophies'] },
     ];

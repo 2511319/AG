@@ -26,9 +26,13 @@ import {
     PartyMenuScreen, PartyCodeScreen, PartyLobbyHostScreen, PartyLobbyGuestScreen
 } from '../../screens/Party/PartyScreens';
 import {
-    PlayMenuScreen, RunSceneScreen, RunScenePlanScreen, RunCombatScreen,
+    RunSceneScreen, RunScenePlanScreen, RunCombatScreen,
     RunCombatFieldScreen, RunEpilogueScreen
 } from '../../screens/Game/GameScreens';
+import { GamePreparationScreen } from '../../screens/Game/GamePreparationScreen';
+import {
+    PrepBriefingScreen, PrepCampScreen, PrepProvisionsScreen, MissionSelectScreen, ActiveCampaignsScreen
+} from '../../screens/Game/PrepScreens';
 import {
     MasterHubScreen, GMLobbyScreen, GMScreenScreen, EditorLibraryScreen,
     EditorCampaignScreen, EditorTemplatesScreen, EditorQuickSessionScreen
@@ -43,8 +47,8 @@ import {
 const SCREEN_COMPONENTS: Record<string, React.ComponentType<{ screen: Screen; onAction: (target: string) => void }>> = {
     // Main & Service
     onboarding: OnboardingScreen,
-    onboarding_character: OnboardingScreen, // Reusing OnboardingScreen for simplicity or create specific if needed
-    exit: OnboardingScreen, // Reusing
+    onboarding_character: OnboardingScreen,
+    exit: OnboardingScreen,
     help: HelpScreen,
     settings: SettingsScreen,
     profile: ProfileScreen,
@@ -89,7 +93,16 @@ const SCREEN_COMPONENTS: Record<string, React.ComponentType<{ screen: Screen; on
     party_lobby_guest: PartyLobbyGuestScreen,
 
     // Game
-    play_menu: PlayMenuScreen,
+    play_menu: GamePreparationScreen,
+    game_prep: GamePreparationScreen,
+    mission_select: MissionSelectScreen,
+    prep_inventory: CharacterInventoryScreen,
+    // ...
+    active_campaigns: ActiveCampaignsScreen,
+    prep_journal: CharacterStoryScreen,
+    prep_briefing: PrepBriefingScreen,
+    prep_camp: PrepCampScreen,
+    prep_provisions: PrepProvisionsScreen,
     run_scene: RunSceneScreen,
     run_scene_plan: RunScenePlanScreen,
     run_combat: RunCombatScreen,

@@ -121,11 +121,11 @@ export const SCREENS: ScreenMap = {
             {
                 id: "continue",
                 label: "Продолжить",
-                target: "run_scene"
+                target: "game_prep"
             },
             {
                 id: "solo",
-                label: "Соло‑приключение",
+                label: "Новая игра",
                 target: "solo_char"
             },
             {
@@ -135,788 +135,567 @@ export const SCREENS: ScreenMap = {
             }
         ]
     },
-    town_hub: {
-        id: "town_hub",
-        title: "Город",
-        kind: "game",
-        description:
-            "Городской хаб между приключениями. Здесь вы можете зайти в таверну, на рынок, заняться крафтом, делами гильдии, посетить аукцион или испытать удачу.",
+    game_prep: {
+        id: "game_prep",
+        title: "Выбор героя",
+        kind: "hub",
+        description: "Выберите героя для начала приключения.",
         actions: [
             {
-                id: "tavern",
-                label: "Таверна",
-                target: "town_tavern"
+                id: "continue",
+                label: "Продолжить",
+                target: "mission_select"
             },
             {
-                id: "market",
-                label: "Рынок",
-                target: "town_market"
+                id: "solo",
+                label: "Новая игра",
+                target: "solo_char"
             },
             {
-                id: "auction",
-                label: "Аукцион",
-                target: "town_auction"
-            },
-            {
-                id: "craft",
-                label: "Крафт",
-                target: "town_craft"
-            },
-            {
-                id: "guild",
-                label: "Гильдия",
-                target: "town_guild"
-            },
-            {
-                id: "mage_tower",
-                label: "Башня Магов",
-                target: "town_mage_tower"
-            },
-            {
-                id: "gambling",
-                label: "Игорный Дом",
-                target: "town_gambling"
-            },
-            {
-                id: "port",
-                label: "Порт",
-                target: "town_port"
-            },
-            {
-                id: "temple",
-                label: "Храм",
-                target: "town_temple"
-            },
-            {
-                id: "arena",
-                label: "Арена",
-                target: "town_arena"
-            },
-            {
-                id: "workshop",
-                label: "Мастерская",
-                target: "town_workshop"
-            },
-            {
-                id: "graveyard",
-                label: "Кладбище",
-                target: "town_graveyard"
-            },
-            {
-                id: "home",
-                label: "Дом",
-                target: "town_home"
+                id: "party",
+                label: "Пати",
+                target: "party_menu"
             }
-        ]
+        ],
+        backTarget: "play_menu"
     },
-    town_tavern: {
-        id: "town_tavern",
-        title: "Таверна",
-        kind: "game",
-        description:
-            "Макет таверны. В финальной версии здесь можно будет искать пати и кампании, брать побочные задания и общаться с ключевыми NPC.",
-        backTarget: "town_hub",
+    mission_select: {
+        id: "mission_select",
+        title: "Выбор миссии",
+        kind: "hub",
+        description: "Выберите приключение, в которое отправится ваша группа.",
         actions: [
             {
-                id: "board",
-                label: "Доска объявлений",
-                target: "town_board"
+                id: "select_mission",
+                label: "Выбрать",
+                target: "prep_briefing"
+            },
+            {
+                id: "back",
+                label: "Назад",
+                target: "game_prep"
             }
+        ],
+        backTarget: "game_prep"
+    },
+    prep_inventory: {
+        id: "prep_inventory",
+        title: "Инвентарь",
+        kind: "game",
+        description: "Управление снаряжением перед вылазкой.",
+        actions: [
+            { id: "back", label: "Назад", target: "game_prep" }
         ]
     },
-    town_market: {
-        id: "town_market",
-        title: "Рынок",
+    prep_heroes: {
+        id: "prep_heroes",
+        title: "Герои",
         kind: "game",
-        description:
-            "Макет рынка. В финальной версии здесь будет покупка и продажа предметов, расходников, косметики и, возможно, особых слотов кампаний.",
-        backTarget: "town_hub",
-        actions: []
-    },
-    town_auction: {
-        id: "town_auction",
-        title: "Аукцион",
-        kind: "game",
-        description:
-            "Торговая площадка для обмена редкими трофеями и экипировкой между игроками.",
-        backTarget: "town_hub",
-        actions: []
-    },
-    town_craft: {
-        id: "town_craft",
-        title: "Крафт",
-        kind: "game",
-        description:
-            "Макет крафта. В финальной версии здесь можно будет улучшать и создавать предметы, разбивать лут на ресурсы и экспериментировать с рецептами.",
-        backTarget: "town_hub",
-        actions: []
-    },
-    town_guild: {
-        id: "town_guild",
-        title: "Гильдия",
-        kind: "game",
-        description:
-            "Макет гильдии. В финальной версии здесь будут кланы и сообщества, общие цели, рейтинги и, возможно, кооперативные кампании.",
-        backTarget: "town_hub",
-        actions: []
-    },
-    town_mage_tower: {
-        id: "town_mage_tower",
-        title: "Башня Магов",
-        kind: "game",
-        description:
-            "Центр магических услуг: телепортация в открытые локации, создание рун и зачарование.",
-        backTarget: "town_hub",
-        actions: []
-    },
-    town_gambling: {
-        id: "town_gambling",
-        title: "Игорный Дом",
-        kind: "game",
-        description:
-            "Место для азартных игр и ставок. Испытайте удачу в кости или карты.",
-        backTarget: "town_hub",
-        actions: []
-    },
-    town_port: {
-        id: "town_port",
-        title: "Порт",
-        kind: "game",
-        description:
-            "Морские ворота города. Отправка экспедиций, торговые контракты и черный рынок.",
-        backTarget: "town_hub",
-        actions: []
-    },
-    town_workshop: {
-        id: "town_workshop",
-        title: "Мастерская",
-        kind: "game",
-        description:
-            "Инженерный цех для улучшения городских строений и создания осадных орудий.",
-        backTarget: "town_hub",
-        actions: []
-    },
-    town_graveyard: {
-        id: "town_graveyard",
-        title: "Кладбище",
-        kind: "game",
-        description:
-            "Место упокоения и памяти. Воскрешение героев и общение с духами.",
-        backTarget: "town_hub",
-        actions: []
-    },
-    town_board: {
-        id: "town_board",
-        title: "Доска объявлений",
-        kind: "game",
-        description:
-            "Макет доски объявлений. В финальной версии здесь будут побочные задания, контракты и события, которые можно взять между основными сессиями.",
-        backTarget: "town_tavern",
-        actions: []
-    },
-    town_arena: {
-        id: "town_arena",
-        title: "Арена",
-        kind: "game",
-        description:
-            "Макет арены. В финальной версии здесь будут боевые испытания для проверки билдов, тренировочные бои и особые челленджи.",
-        backTarget: "town_hub",
-        actions: []
-    },
-    town_temple: {
-        id: "town_temple",
-        title: "Храм",
-        kind: "game",
-        description:
-            "Макет храма. В финальной версии здесь можно будет снимать проклятия, получать благословения и взаимодействовать с мета‑ресурсами кампаний.",
-        backTarget: "town_hub",
-        actions: []
-    },
-    town_home: {
-        id: "town_home",
-        title: "Дом",
-        kind: "game",
-        description:
-            "Макет личного дома/комнаты. В финальной версии здесь будет отображаться коллекция трофеев, украшения и персонализация игрока.",
-        backTarget: "town_hub",
-        actions: []
-    },
-    town_quest_details: {
-        id: "town_quest_details",
-        title: "Детали задания",
-        kind: "game",
-        description: "Подробное описание задания, награды и условия.",
-        backTarget: "town_tavern",
+        description: "Выбор и настройка состава партии.",
         actions: [
-            { id: "accept_quest", label: "Принять", target: "town_tavern" }
+            { id: "back", label: "Назад", target: "game_prep" }
         ]
     },
-    town_quest_details_goat: {
-        id: "town_quest_details_goat",
-        title: "Детали задания",
+    prep_journal: {
+        id: "prep_journal",
+        title: "Журнал",
         kind: "game",
-        description: "Подробное описание задания, награды и условия.",
-        backTarget: "town_tavern",
+        description: "Текущие задачи и заметки.",
         actions: [
-            { id: "accept_quest", label: "Принять", target: "town_tavern" }
+            { id: "back", label: "Назад", target: "game_prep" }
         ]
     },
-    town_item_details: {
-        id: "town_item_details",
-        title: "Предмет",
+    active_campaigns: {
+        id: "active_campaigns",
+        title: "Текущие приключения",
         kind: "game",
-        description: "Характеристики предмета и покупка.",
-        backTarget: "town_market",
-        actions: [
-            { id: "buy_item", label: "Купить", target: "town_market" }
-        ]
-    },
-    town_npc_dialog: {
-        id: "town_npc_dialog",
-        title: "Диалог",
-        kind: "game",
-        description: "Разговор с NPC.",
-        actions: [
-            { id: "continue_dialog", label: "Продолжить", target: "town_npc_dialog" },
-            { id: "end_dialog", label: "Завершить", target: "town_tavern" }
-        ]
-    },
-    journal_hub: {
-        id: "journal_hub",
-        title: "Журнал и прогресс",
-        kind: "service",
-        description:
-            "Раздел для знаний о мире и вашего прогресса: архив сыгранных сессий, карта кампаний, хронология мира, глоссарий терминов, лор, правила, достижения и коллекция трофеев.",
+        description: "Продолжить незавершенные истории.",
         actions: [
             {
-                id: "journal_sessions",
-                label: "Архив сессий",
-                target: "journal_sessions"
+                id: "resume_session",
+                label: "Продолжить",
+                target: "run_scene"
             },
             {
-                id: "journal_campaigns",
-                label: "Кампании",
-                target: "journal_campaigns"
-            },
-            {
-                id: "journal_timeline",
-                label: "Хронология",
-                target: "journal_timeline"
-            },
-            {
-                id: "journal_glossary",
-                label: "Глоссарий",
-                target: "journal_glossary"
-            },
-            {
-                id: "journal_world",
-                label: "Знания мира",
-                target: "journal_world"
-            },
-            {
-                id: "journal_rules",
-                label: "Правила мира",
-                target: "journal_rules"
-            },
-            {
-                id: "journal_achievements",
-                label: "Достижения",
-                target: "journal_achievements"
-            },
-            {
-                id: "journal_trophies",
-                label: "Трофеи",
-                target: "journal_trophies"
+                id: "back",
+                label: "Назад",
+                target: "game_prep"
             }
-        ]
+        ],
+        backTarget: "game_prep"
     },
-    journal_sessions: {
-        id: "journal_sessions",
-        title: "Архив сессий",
-        kind: "service",
-        description:
-            "Макет архива сессий. В финальной версии здесь будут краткие отчёты по сыгранным сессиям, ключевые решения и ссылки на эпилоги.",
-        backTarget: "journal_hub",
-        actions: []
+    run_scene: {
+        id: "run_scene",
+        title: "Приключение",
+        kind: "game",
+        description: "Ваше текущее приключение.",
+        actions: [],
+        backTarget: "game_prep"
     },
-    journal_campaigns: {
-        id: "journal_campaigns",
-        title: "Кампании",
-        kind: "service",
-        description:
-            "Макет списка кампаний игрока. В финальной версии здесь будут статусы кампаний (активна, завершена), краткие описания и переходы к продолжению или эпилогу.",
-        backTarget: "journal_hub",
-        actions: []
+    run_scene_plan: {
+        id: "run_scene_plan",
+        title: "План сцены",
+        kind: "game",
+        description: "Планирование действий.",
+        actions: [],
+        backTarget: "run_scene"
     },
-    journal_timeline: {
-        id: "journal_timeline",
-        title: "Хронология",
-        kind: "service",
-        description:
-            "Макет хронологии мира и кампаний. В финальной версии здесь будет лента ключевых событий, привязанных к сессиям и важным решениям.",
-        backTarget: "journal_hub",
-        actions: []
+    run_combat: {
+        id: "run_combat",
+        title: "Бой",
+        kind: "game",
+        description: "Режим сражения.",
+        actions: [],
+        backTarget: "run_scene"
     },
-    journal_glossary: {
-        id: "journal_glossary",
-        title: "Глоссарий",
-        kind: "service",
-        description:
-            "Справочник терминов и ключевых понятий мира. В финальной версии здесь будут краткие определения, ссылки на сцены и важных NPC.",
-        backTarget: "journal_hub",
-        actions: []
+    run_combat_field: {
+        id: "run_combat_field",
+        title: "Поле боя",
+        kind: "game",
+        description: "Тактическая карта.",
+        actions: [],
+        backTarget: "run_combat"
     },
-    journal_world: {
-        id: "journal_world",
-        title: "Знания мира",
-        kind: "service",
-        description:
-            "Обзор лора: фракции, регионы, хронология и ключевые события. В финальной версии здесь будут разбивки по темам и связки с кампаниями.",
-        backTarget: "journal_hub",
-        actions: []
+    run_epilogue: {
+        id: "run_epilogue",
+        title: "Эпилог",
+        kind: "game",
+        description: "Итоги сражения и награды.",
+        actions: [
+            {
+                id: "continue",
+                label: "Продолжить",
+                target: "run_scene"
+            }
+        ],
+        backTarget: "run_scene"
     },
-    journal_rules: {
-        id: "journal_rules",
-        title: "Правила мира",
-        kind: "service",
-        description:
-            "Облегчённая версия правил: как работают проверки, бой, магия и особые механики этого сеттинга.",
-        backTarget: "journal_hub",
-        actions: []
+    prep_briefing: {
+        id: "prep_briefing",
+        title: "Штаб",
+        kind: "game",
+        description: "Подготовка к операции. Изучите разведданные, закупитесь припасами и отдохните перед боем.",
+        actions: [
+            { id: "prep_camp", label: "Лагерь", target: "prep_camp" },
+            { id: "prep_provisions", label: "Снабжение", target: "prep_provisions" },
+            { id: "start_mission", label: "Начать", target: "run_scene" },
+            { id: "back", label: "Назад", target: "mission_select" }
+        ],
+        backTarget: "mission_select"
     },
-    journal_achievements: {
-        id: "journal_achievements",
-        title: "Достижения",
-        kind: "service",
-        description:
-            "Список открытых достижений: сюжетные вехи, скрытые находки, испытания. В финальной версии здесь будет прогресс по каждому достижению.",
-        backTarget: "journal_hub",
-        actions: []
+    prep_camp: {
+        id: "prep_camp",
+        title: "Лагерь",
+        kind: "game",
+        description: "Отдых и восстановление сил.",
+        actions: [
+            { id: "back", label: "Назад", target: "prep_briefing" }
+        ],
+        backTarget: "prep_briefing"
     },
-    journal_trophies: {
-        id: "journal_trophies",
-        title: "Трофеи",
-        kind: "service",
-        description:
-            "Коллекция особых трофеев: уникальные предметы, памятные находки и мета‑награды за кампании.",
-        backTarget: "journal_hub",
-        actions: []
+    prep_provisions: {
+        id: "prep_provisions",
+        title: "Снабжение",
+        kind: "game",
+        description: "Закупка припасов в дорогу.",
+        actions: [
+            { id: "back", label: "Назад", target: "prep_briefing" }
+        ],
+        backTarget: "prep_briefing"
     },
     character: {
         id: "character",
         title: "Персонаж",
         kind: "hub",
-        description: "Хаб персонажа.",
-        actions: []
-    },
-    character_sheet: {
-        id: "character_sheet",
-        title: "Лист Героя",
-        kind: "game",
-        description: "Сводная информация о персонаже: здоровье, опыт, атрибуты и экипировка.",
-        backTarget: "character",
+        description:
+            "Управление вашими героями. Здесь можно создать нового, изменить текущего, посмотреть статы и инвентарь.",
         actions: [
             {
-                id: "open_stats",
-                label: "Подробные характеристики",
-                target: "character_stats"
+                id: "my_heroes",
+                label: "Мои герои",
+                target: "character_list"
+            },
+            {
+                id: "create_hero",
+                label: "Создать нового",
+                target: "character_sheet"
+            },
+            {
+                id: "back_to_profile",
+                label: "Назад в аккаунт",
+                target: "profile"
             }
         ]
     },
     character_list: {
         id: "character_list",
-        title: "Список персонажей",
+        title: "Список героев",
         kind: "game",
         description:
-            "Макет списка всех персонажей: активных и архивных. В финальной версии здесь можно будет выбирать активного героя и перемещать персонажей между активом и архивом.",
-        backTarget: "character",
+            "Макет списка героев. В финальной версии здесь будет выбор активного персонажа и краткая сводка по каждому.",
         actions: [
             {
-                id: "mark_active",
-                label: "Сделать героя активным",
-                target: "character"
+                id: "select_hero",
+                label: "Выбрать",
+                target: "character_sheet"
             },
             {
-                id: "toggle_archive",
-                label: "Переместить героя в архив / вернуть",
+                id: "back",
+                label: "Назад",
+                target: "character"
+            }
+        ]
+    },
+    character_sheet: {
+        id: "character_sheet",
+        title: "Лист персонажа",
+        kind: "game",
+        description:
+            "Макет листа персонажа. Основные параметры, класс, уровень и опыт.",
+        actions: [
+            {
+                id: "edit",
+                label: "Редактировать",
+                target: "character_sheet"
+            },
+            {
+                id: "back",
+                label: "Назад",
                 target: "character_list"
             }
         ]
     },
     character_stats: {
         id: "character_stats",
-        title: "Характеристики и навыки",
+        title: "Характеристики",
         kind: "game",
         description:
-            "Здесь будут основные характеристики (Сила, Ловкость и т.п.), модификаторы, навыки, спасброски и другие числовые параметры персонажа.",
-        backTarget: "character",
-        actions: []
+            "Макет характеристик. Сила, ловкость, интеллект и вторичные параметры.",
+        actions: [
+            {
+                id: "back",
+                label: "Назад",
+                target: "character_sheet"
+            }
+        ]
     },
     character_inventory: {
         id: "character_inventory",
-        title: "Инвентарь и экипировка",
+        title: "Инвентарь героя",
         kind: "game",
         description:
-            "Здесь будут слоты экипировки, содержимое рюкзака, валюты и особые предметы персонажа.",
-        backTarget: "character",
-        actions: []
+            "Макет инвентаря. Экипировка, рюкзак и управление предметами.",
+        actions: [
+            {
+                id: "back",
+                label: "Назад",
+                target: "character_sheet"
+            }
+        ]
     },
     character_story: {
         id: "character_story",
-        title: "История и заметки",
+        title: "История",
         kind: "game",
         description:
-            "Здесь будут краткая биография героя, важные события кампаний, заметки мастера и личные пометки игрока.",
-        backTarget: "character",
-        actions: []
+            "Макет биографии. Прошлое героя, личные квесты и заметки.",
+        actions: [
+            {
+                id: "back",
+                label: "Назад",
+                target: "character_sheet"
+            }
+        ]
     },
     character_relations: {
         id: "character_relations",
-        title: "Отношения и фракции",
+        title: "Отношения",
         kind: "game",
         description:
-            "Макет экрана отношений персонажа. В финальной версии здесь будет репутация с фракциями, отношения с ключевыми NPC и влияние решений кампаний.",
-        backTarget: "character",
-        actions: []
+            "Макет социальных связей. Друзья, враги и репутация во фракциях.",
+        actions: [
+            {
+                id: "back",
+                label: "Назад",
+                target: "character_sheet"
+            }
+        ]
     },
     solo_char: {
         id: "solo_char",
         title: "Создание персонажа",
         kind: "game",
-        description:
-            "Перед тем как отправиться в приключение, создайте героя. В финальной версии тут будут детали внешности, класса и предыстории.",
-        backTarget: "play_menu",
+        description: "Создайте своего героя или выберите готового.",
         actions: [
             {
-                id: "start_run",
-                label: "Начать приключение",
+                id: "run_scene",
+                label: "Начать",
                 target: "run_scene"
+            },
+            {
+                id: "back",
+                label: "Назад",
+                target: "game_prep"
             }
-        ]
+        ],
+        backTarget: "game_prep"
     },
     party_menu: {
         id: "party_menu",
-        title: "Игра в пати",
+        title: "Пати",
         kind: "hub",
         description:
-            "Соберите друзей в одну кампанию: создайте комнату или присоединитесь по коду.",
-        backTarget: "play_menu",
+            "Режим совместной игры. Вы можете создать лобби или присоединиться по коду.",
         actions: [
             {
-                id: "create",
-                label: "Создать кампанию",
+                id: "create_lobby",
+                label: "Создать лобби",
                 target: "party_lobby_host"
             },
             {
-                id: "join",
-                label: "Войти по коду",
+                id: "join_lobby",
+                label: "Ввести код",
                 target: "party_code"
+            },
+            {
+                id: "back",
+                label: "Назад",
+                target: "play_menu"
             }
         ]
     },
     party_code: {
         id: "party_code",
-        title: "Вход по коду",
+        title: "Ввод кода",
         kind: "service",
         description:
-            "Введите код кампании, который прислал вам мастер или друг, чтобы присоединиться к пати.",
-        backTarget: "party_menu",
+            "Введите код приглашения, чтобы присоединиться к приключению.",
         actions: [
             {
-                id: "submit",
-                label: "Подтвердить код",
+                id: "submit_code",
+                label: "Войти",
                 target: "party_lobby_guest"
+            },
+            {
+                id: "back",
+                label: "Назад",
+                target: "party_menu"
             }
         ]
     },
     party_lobby_host: {
         id: "party_lobby_host",
-        title: "Лобби пати (хост)",
+        title: "Лобби (Хост)",
         kind: "game",
         description:
-            "Вы создали кампанию. Ждите игроков, собирайте пати и когда все готовы — начинайте приключение.",
-        backTarget: "party_menu",
+            "Вы — лидер группы. Ждите игроков, настраивайте сложность и запускайте сессию.",
         actions: [
             {
-                id: "add_character",
-                label: "Добавить персонажа",
-                target: "solo_char"
+                id: "start_session",
+                label: "Начать приключение",
+                target: "run_scene"
             },
             {
-                id: "start_party_run",
-                label: "Начать игру",
-                target: "run_scene"
+                id: "kick_player",
+                label: "Управление игроками",
+                target: "party_lobby_host"
+            },
+            {
+                id: "disband",
+                label: "Распустить",
+                target: "party_menu"
             }
         ]
     },
     party_lobby_guest: {
         id: "party_lobby_guest",
-        title: "Лобби пати (гость)",
+        title: "Лобби (Гость)",
         kind: "game",
         description:
-            "Вы в лобби кампании. Создайте или выберите персонажа и ждите, пока мастер начнёт сессию.",
+            "Вы в группе. Ожидайте, пока лидер начнет игру. Здесь можно выбрать своего героя и общаться в чате.",
         actions: [
             {
-                id: "add_character",
-                label: "Добавить персонажа",
-                target: "solo_char"
+                id: "ready",
+                label: "Готов",
+                target: "party_lobby_guest"
             },
             {
                 id: "leave",
-                label: "Покинуть пати",
-                target: "play_menu"
-            }
-        ]
-    },
-    run_scene: {
-        id: "run_scene",
-        title: "Сцена приключения",
-        kind: "game",
-        description:
-            "Canvas сцены приключения. Вверху контекст с главой/сценой кампании и оценкой уровня угрозы, слева повествование и мини‑лог, справа цели, факторы и NPC/объекты сцены, ниже состояние группы и панель предлагаемых действий с полем «Свой ход».",
-        actions: [
-            {
-                id: "choice_1",
-                label: "Идти дальше по сюжету",
-                target: "run_scene"
-            },
-            {
-                id: "choice_2",
-                label: "Спровоцировать бой",
-                target: "run_combat"
-            },
-            {
-                id: "choice_3",
-                label: "Завершить кампанию",
-                target: "run_epilogue"
-            },
-            {
-                id: "custom_action",
-                label: "Свой ход",
-                target: "run_scene"
-            },
-            {
-                id: "to_menu",
-                label: "В меню",
-                target: "play_menu"
-            }
-        ]
-    },
-    run_scene_plan: {
-        id: "run_scene_plan",
-        title: "План сцены",
-        kind: "game",
-        description:
-            "Макет плана сцены. В финальной версии здесь будет схематичная карта локации с ключевыми зонами, путями, объектами взаимодействия и скрытыми областями, открывающимися после проверок.",
-        actions: [
-            {
-                id: "back_to_scene_from_plan",
-                label: "Назад к сцене",
-                target: "run_scene"
-            }
-        ]
-    },
-    run_combat: {
-        id: "run_combat",
-        title: "Бой",
-        kind: "game",
-        description:
-            "Боевой Canvas. Фон — арт сцены боя. Вверху блок с информацией о локации и времени суток и кнопкой схемы поля боя, ниже шкала инициативы, слева лог боя, справа компактные панели союзников и врагов, снизу полоска вашего персонажа и панель быстрых действий со своим ходом.",
-        actions: [
-            {
-                id: "end_combat",
-                label: "Завершить бой",
-                target: "run_scene"
-            },
-            {
-                id: "finish_campaign",
-                label: "Финал кампании",
-                target: "run_epilogue"
-            },
-            {
-                id: "to_menu",
-                label: "В меню",
-                target: "play_menu"
-            }
-        ]
-    },
-    run_combat_field: {
-        id: "run_combat_field",
-        title: "Схема поля боя",
-        kind: "game",
-        description:
-            "Макет схемы поля боя. В финальной версии здесь будет расчерченная на клетки карта с позициями союзников и противников, укрытиями и зонами эффектов.",
-        actions: [
-            {
-                id: "back_to_combat_from_field",
-                label: "Назад к бою",
-                target: "run_combat"
-            }
-        ]
-    },
-    run_epilogue: {
-        id: "run_epilogue",
-        title: "Эпилог",
-        kind: "game",
-        description:
-            "Кампания завершена. Здесь будут итоги приключения, награды и дальнейшие варианты.",
-        actions: [
-            {
-                id: "to_menu",
-                label: "Вернуться в меню",
-                target: "play_menu"
+                label: "Покинуть",
+                target: "party_menu"
             }
         ]
     },
     master_hub: {
         id: "master_hub",
         title: "Мастерская",
-        kind: "gm",
+        kind: "hub",
         description:
-            "Управление кампаниями мастера, редактором и быстрыми сессиями. Здесь вы ведёте сессии и готовите контент.",
+            "Инструментарий Гейм‑мастера. Создавайте свои миры, управляйте кампаниями и проводите игры для друзей.",
         actions: [
             {
-                id: "gm_campaigns",
-                label: "Кампании мастера",
-                target: "gm_lobby"
-            },
-            {
-                id: "editor",
-                label: "Редактор кампаний",
+                id: "my_campaigns",
+                label: "Мои кампании",
                 target: "editor_library"
             },
             {
                 id: "quick_session",
                 label: "Быстрая сессия",
                 target: "editor_quick_session"
+            },
+            {
+                id: "gm_lobby",
+                label: "Лобби мастера",
+                target: "gm_lobby"
+            },
+            {
+                id: "back_to_profile",
+                label: "Назад в аккаунт",
+                target: "profile"
             }
         ]
     },
     gm_lobby: {
         id: "gm_lobby",
-        title: "Кампании мастера",
-        kind: "gm",
+        title: "Лобби Мастера",
+        kind: "game",
         description:
-            "Раздел для живого мастера. Здесь будут ваши кампании, быстрый старт сессии и доступ к панели мастера.",
+            "Управление активной сессией со стороны ГМ. Подключение игроков, выбор сцены и раздача ролей.",
         actions: [
             {
-                id: "open_campaign",
-                label: "Открыть кампанию",
-                target: "run_scene"
-            },
-            {
-                id: "new_campaign",
-                label: "Создать кампанию",
-                target: "editor_campaign"
-            },
-            {
-                id: "gm_screen",
-                label: "Панель мастера",
+                id: "start_game",
+                label: "Запустить игру",
                 target: "gm_screen"
             },
             {
                 id: "back",
-                label: "Назад в мастерскую",
+                label: "Назад",
                 target: "master_hub"
             }
         ]
     },
     gm_screen: {
         id: "gm_screen",
-        title: "Панель мастера",
-        kind: "gm",
+        title: "Экран Мастера",
+        kind: "game",
         description:
-            "Макет панели мастера. В финальной версии здесь будут быстрый доступ к NPC, локациям, заметкам, таблицам случайных событий и управлению сценами.",
+            "Главный пульт управления игрой. Скрытые броски, управление NPC, погодой и событиями.",
         actions: [
             {
-                id: "back_to_gm_lobby",
-                label: "Назад к кампаниям мастера",
-                target: "gm_lobby"
-            }
-        ]
-    },
-    editor_library: {
-        id: "editor_library",
-        title: "Редактор кампаний",
-        kind: "editor",
-        description:
-            "Библиотека ваших сценариев. В финальной версии здесь появится список кампаний, шаблоны и кнопка создания новой.",
-        actions: [
-            {
-                id: "open_campaign",
-                label: "Открыть кампанию",
-                target: "editor_campaign"
+                id: "pause",
+                label: "Пауза",
+                target: "gm_screen"
             },
             {
-                id: "new_campaign",
-                label: "Новая кампания",
-                target: "editor_campaign"
-            },
-            {
-                id: "templates",
-                label: "Шаблоны кампаний",
-                target: "editor_templates"
-            },
-            {
-                id: "back",
-                label: "Назад в мастерскую",
-                target: "master_hub"
+                id: "end_session",
+                label: "Завершить сессию",
+                target: "run_epilogue"
             }
         ]
     },
-    editor_campaign: {
-        id: "editor_campaign",
-        title: "Редактор кампании",
-        kind: "editor",
+    journal_hub: {
+        id: "journal_hub",
+        title: "Архив знаний",
+        kind: "hub",
         description:
-            "Макет редактора кампании. Здесь будут сцены, связи, NPC и настройки приключения.",
+            "Ваша личная библиотека. История приключений, бестиарий, лор мира и достижения.",
         actions: [
             {
-                id: "back_to_library",
-                label: "Назад к библиотеке",
-                target: "editor_library"
+                id: "sessions",
+                label: "История сессий",
+                target: "journal_sessions"
             },
             {
-                id: "to_menu",
-                label: "В меню",
-                target: "main"
-            }
-        ]
-    },
-    editor_templates: {
-        id: "editor_templates",
-        title: "Шаблоны кампаний",
-        kind: "editor",
-        description:
-            "Макет списка шаблонов кампаний. В финальной версии здесь будут пресеты для коротких, средних и длинных кампаний, а также спец‑форматы вроде ваншотов.",
-        actions: [
+                id: "campaigns",
+                label: "Кампании",
+                target: "journal_campaigns"
+            },
             {
-                id: "back_to_library_from_templates",
-                label: "Назад к библиотеке",
-                target: "editor_library"
-            }
-        ]
-    },
-    editor_quick_session: {
-        id: "editor_quick_session",
-        title: "Быстрая сессия",
-        kind: "editor",
-        description:
-            "Макет мастера быстрой сессии. В финальной версии здесь можно будет задать параметры (сеттинг, тон, сложность) и сгенерировать пригодную к игре одноразовую сессию.",
-        actions: [
+                id: "timeline",
+                label: "Хронология",
+                target: "journal_timeline"
+            },
             {
-                id: "back_to_master_from_quick",
-                label: "Назад в мастерскую",
-                target: "master_hub"
+                id: "glossary",
+                label: "Бестиарий и Лор",
+                target: "journal_glossary"
+            },
+            {
+                id: "rules",
+                label: "Правила",
+                target: "journal_rules"
+            },
+            {
+                id: "achievements",
+                label: "Достижения",
+                target: "journal_achievements"
+            },
+            {
+                id: "trophies",
+                label: "Зал трофеев",
+                target: "journal_trophies"
+            },
+            {
+                id: "back_to_profile",
+                label: "Назад в аккаунт",
+                target: "profile"
             }
         ]
     },
-    settings: {
-        id: "settings",
-        title: "Настройки",
+    journal_sessions: {
+        id: "journal_sessions",
+        title: "История сессий",
+        kind: "game",
+        description: "Логи прошлых игр и статистика.",
+        actions: [{ id: "back", label: "Назад", target: "journal_hub" }]
+    },
+    journal_campaigns: {
+        id: "journal_campaigns",
+        title: "Кампании",
+        kind: "game",
+        description: "Прогресс в сюжетных линиях.",
+        actions: [{ id: "back", label: "Назад", target: "journal_hub" }]
+    },
+    journal_timeline: {
+        id: "journal_timeline",
+        title: "Хронология",
+        kind: "game",
+        description: "Лента событий вашего мира.",
+        actions: [{ id: "back", label: "Назад", target: "journal_hub" }]
+    },
+    journal_glossary: {
+        id: "journal_glossary",
+        title: "Бестиарий и Лор",
+        kind: "game",
+        description: "Энциклопедия встреченных существ и мест.",
+        actions: [{ id: "back", label: "Назад", target: "journal_hub" }]
+    },
+    journal_world: {
+        id: "journal_world",
+        title: "Мир",
+        kind: "game",
+        description: "Карты и описание локаций.",
+        actions: [{ id: "back", label: "Назад", target: "journal_hub" }]
+    },
+    journal_rules: {
+        id: "journal_rules",
+        title: "Правила",
         kind: "service",
-        description:
-            "Здесь будут собраны все настройки: интерфейс, уведомления, контент и приватность.",
-        actions: []
+        description: "Справочник по механике игры.",
+        actions: [{ id: "back", label: "Назад", target: "journal_hub" }]
     },
+    journal_achievements: {
+        id: "journal_achievements",
+        title: "Достижения",
+        kind: "service",
+        description: "Ваши награды и прогресс.",
+        actions: [{ id: "back", label: "Назад", target: "journal_hub" }]
+    },
+    journal_trophies: {
+        id: "journal_trophies",
+        title: "Зал трофеев",
+        kind: "game",
+        description: "Коллекция редких предметов.",
+        actions: [{ id: "back", label: "Назад", target: "journal_hub" }]
+    }
 };
